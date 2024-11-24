@@ -41,7 +41,7 @@ public class Login extends JFrame{
 
             DBConextion conection = new DBConextion();
 
-            String consult = "SELECT * FROM OctoberEatsDB.Users WHERE Users.Usernames = (?) AND Users.Passwords = (?);";
+            String consult = "SELECT * FROM OctoberEatsDB.Usersv2 WHERE Usersv2.Usernames = (?) AND Usersv2.Passwords = (?);";
             ps = conection.StablishConection().prepareStatement(consult);
 
             String Pass = String.valueOf(PasswordJPassField.getPassword());

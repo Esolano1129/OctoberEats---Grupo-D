@@ -1,4 +1,8 @@
 package org.example;
 
-public class Register {
+import javax.swing.*;
+
+public class Register extends JFrame {
+
+
 }
