@@ -32,6 +32,15 @@ public class Login extends JFrame{
             }
         });
 
+        RegisterButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Register newRegister = new Register();
+                newRegister.setVisible(true);
+                dispose();
+            }
+        });
+
     }
     public void validaUsuario(JTextField usernameTxt, JPasswordField PasswordJPassField) {
 
@@ -65,6 +74,7 @@ public class Login extends JFrame{
         } catch (Exception error) {
             JOptionPane.showMessageDialog(null, "ERROR: " + error.toString());
         }
+
 
       }
 
