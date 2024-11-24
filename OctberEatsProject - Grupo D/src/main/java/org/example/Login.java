@@ -14,13 +14,15 @@ public class Login extends JFrame{
     private JButton LoginButton;
     private JButton RegisterButton;
     private JPanel MainPanel;
+    private JLabel cuenta;
+    private JLabel logo;
 
 
     public Login(){
         setContentPane(MainPanel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setSize(500,500);
+        setSize(1920,1080);
 
         DBConextion NewConextion = new DBConextion();
         NewConextion.StablishConection();
