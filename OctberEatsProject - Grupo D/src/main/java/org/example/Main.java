@@ -1,15 +1,11 @@
 package org.example;
 
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
 public class Main {
     public static void main(String[] args) {
 
-Login login = new Login();
-login.setVisible(true);
+   Login login = new Login();
+   login.setVisible(true);
 
     }
 }
