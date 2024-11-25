@@ -1,6 +1,6 @@
 package org.example;
 
-public class ProductItem extends DBConextion.Categoria {
+public class ProductItem extends Category {
     private String name;
     private int quantity;
     private double price;
