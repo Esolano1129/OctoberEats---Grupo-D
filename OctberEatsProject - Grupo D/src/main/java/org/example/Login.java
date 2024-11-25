@@ -80,7 +80,7 @@ public class Login extends JFrame{
 
       }
 
-      logo
+
 
 
 
