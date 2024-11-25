@@ -1,6 +1,6 @@
-package org.example.Mysql;
+package org.example;
 
-public class ProductItem extends Categoria{
+public class ProductItem extends DBConextion.Categoria {
     private String name;
     private int quantity;
     private double price;
