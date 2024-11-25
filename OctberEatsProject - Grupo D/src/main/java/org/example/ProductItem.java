@@ -56,13 +56,41 @@ public class ProductItem extends Category {
 
     public ProductItem(String name, String image, String name1, int quantity, double price, String description, double discount) {
         super(name, image);
-        DBConextion NewConextion = new DBConextion();
-        NewConextion.StablishConection();
-        this.name = name1;
-        this.quantity = quantity;
-        this.price = price;
-        this.description = description;
-        this.discount = discount;
+        String query = "INSERT INTO Octobereatsdb.ProductItem(NameP,Quantity,Price,DescriptionP,Discount)VALUES(?,?,?,?,?);";
+
+
+        try {
+            DBConextion db = new DBConextion();
+            db.StablishConection();
+            Connection conn = db.StablishConection();
+
+            this.name = name1;
+            this.quantity = quantity;
+            this.price = price;
+            this.description = description;
+            this.discount = discount;
+
+            if (conn != null) {
+                PreparedStatement preparedStatement = conn.prepareStatement(query);
+                preparedStatement.setString(1, name);
+                preparedStatement.setString(2, String.valueOf(quantity));
+                preparedStatement.setString(3, String.valueOf(price));
+                preparedStatement.setString(4, description);
+                preparedStatement.setString(5, String.valueOf(discount));
+
+
+                int rowsInserted = preparedStatement.executeUpdate();
+
+                if (rowsInserted > 0) {
+                    JOptionPane.showMessageDialog(null, "Success Register");
+
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Cannot established a connection with the data base.");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error data insert: " + ex.getMessage());
+        }
     }
 
     public String getName() {
