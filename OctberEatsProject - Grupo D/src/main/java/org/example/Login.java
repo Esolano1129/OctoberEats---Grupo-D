@@ -16,6 +16,7 @@ public class Login extends JFrame{
     private JPanel MainPanel;
     private JLabel cuenta;
     private JLabel logo;
+    private JLabel bienvenida;
 
 
     public Login(){
