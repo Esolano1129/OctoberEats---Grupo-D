@@ -11,6 +11,8 @@ public class ProductItem extends Category {
     }
 
     public ProductItem(String name, int quantity, double price, String description, double discount) {
+        DBConextion NewConextion = new DBConextion();
+        NewConextion.StablishConection();
         this.name = name;
         this.quantity = quantity;
         this.price = price;
@@ -20,6 +22,8 @@ public class ProductItem extends Category {
 
     public ProductItem(String name, String image, String name1, int quantity, double price, String description, double discount) {
         super(name, image);
+        DBConextion NewConextion = new DBConextion();
+        NewConextion.StablishConection();
         this.name = name1;
         this.quantity = quantity;
         this.price = price;

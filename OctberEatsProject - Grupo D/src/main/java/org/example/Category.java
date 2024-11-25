@@ -6,9 +6,13 @@ public class Category {
         String image;
 
         public Category() {
+            DBConextion NewConextion = new DBConextion();
+            NewConextion.StablishConection();
         }
 
         public Category(String name, String image) {
+            DBConextion NewConextion = new DBConextion();
+            NewConextion.StablishConection();
             this.name = name;
             this.image = image;
         }

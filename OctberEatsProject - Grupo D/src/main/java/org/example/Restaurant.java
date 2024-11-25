@@ -8,9 +8,13 @@ public class Restaurant {
     private String Rating;
 
     public Restaurant() {
+        DBConextion NewConextion = new DBConextion();
+        NewConextion.StablishConection();
     }
 
     public Restaurant(int id, String restaurantName, String address, String schedule, String rating) {
+        DBConextion NewConextion = new DBConextion();
+        NewConextion.StablishConection();
         this.Id = id;
         this.RestaurantName = restaurantName;
         this.Address = address;
