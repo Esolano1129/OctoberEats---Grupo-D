@@ -78,8 +78,9 @@ public class Login extends JFrame{
             JOptionPane.showMessageDialog(null, "ERROR: " + error.toString());
         }
 
-
       }
+
+      logo
 
 
 
