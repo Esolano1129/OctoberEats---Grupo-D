@@ -1,12 +1,12 @@
 package org.example;
 
+import com.mysql.cj.log.Log;
+
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Register extends JFrame {
@@ -28,12 +28,14 @@ public class Register extends JFrame {
     private JTextField TxtAge;
     private JTextField TxtAddress;
     private JTextField TxtPassword;
+    private JPanel centralPanel;
+    private JButton backButton;
 
     public Register() {
         setContentPane(RegisterPanel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setSize(500, 500);
+        setSize(1920, 1080);
 
 
         registerButton.addActionListener(new ActionListener() {
@@ -43,7 +45,18 @@ public class Register extends JFrame {
 
             }
         });
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Login login = new Login();
+                login.setVisible(true);
+                dispose();
+            }
+        });
+
     }
+
 
     private void saveToDatabase() {
 
