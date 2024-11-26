@@ -191,6 +191,7 @@
                     </constraints>
                     <properties>
                       <background color="-1708317"/>
+                      <font name=".AppleSystemUIFont" size="14" style="0"/>
                     </properties>
                   </component>
                   <vspacer id="84af6">
@@ -222,6 +223,7 @@
                     </constraints>
                     <properties>
                       <background color="-1708317"/>
+                      <font name=".AppleSystemUIFont" size="14" style="0"/>
                     </properties>
                   </component>
                   <vspacer id="35cb7">
@@ -253,6 +255,7 @@
                     </constraints>
                     <properties>
                       <background color="-1708317"/>
+                      <font name=".AppleSystemUIFont" size="14" style="0"/>
                     </properties>
                   </component>
                   <vspacer id="730b1">
@@ -284,6 +287,7 @@
                     </constraints>
                     <properties>
                       <background color="-1708317"/>
+                      <font name=".AppleSystemUIFont" size="14" style="0"/>
                     </properties>
                   </component>
                   <vspacer id="dd1c3">
@@ -421,6 +425,7 @@
                     </constraints>
                     <properties>
                       <background color="-1708317"/>
+                      <font name=".AppleSystemUIFont" size="14" style="0"/>
                     </properties>
                   </component>
                   <vspacer id="3d23b">
@@ -475,6 +480,7 @@
                     </constraints>
                     <properties>
                       <background color="-1708317"/>
+                      <font name=".AppleSystemUIFont" size="14" style="0"/>
                     </properties>
                   </component>
                   <vspacer id="8606a">
@@ -529,6 +535,7 @@
                     </constraints>
                     <properties>
                       <background color="-1708317"/>
+                      <font name=".AppleSystemUIFont" size="14" style="0"/>
                     </properties>
                   </component>
                   <vspacer id="55fa0">
@@ -560,6 +567,7 @@
                     </constraints>
                     <properties>
                       <background color="-1708317"/>
+                      <font name=".AppleSystemUIFont" size="14" style="0"/>
                     </properties>
                   </component>
                   <vspacer id="ddc8b">
