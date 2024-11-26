@@ -21,7 +21,7 @@
         <border type="none"/>
         <children>
           <grid id="fcd04" binding="centralPanel" layout-manager="GridLayoutManager" row-count="11" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="80" bottom="0" right="80"/>
+            <margin top="0" left="64" bottom="0" right="64"/>
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -157,7 +157,7 @@
                           <foreground color="-1"/>
                           <opaque value="true"/>
                           <rolloverEnabled value="true"/>
-                          <text value="Register"/>
+                          <text value="Registrarme"/>
                         </properties>
                       </component>
                     </children>
@@ -196,7 +196,7 @@
                   <vspacer id="84af6">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="16"/>
+                        <preferred-size width="-1" height="12"/>
                       </grid>
                     </constraints>
                   </vspacer>
@@ -227,7 +227,7 @@
                   <vspacer id="35cb7">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="16"/>
+                        <preferred-size width="-1" height="12"/>
                       </grid>
                     </constraints>
                   </vspacer>
@@ -258,7 +258,7 @@
                   <vspacer id="730b1">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="16"/>
+                        <preferred-size width="-1" height="12"/>
                       </grid>
                     </constraints>
                   </vspacer>
@@ -372,7 +372,7 @@
                   <vspacer id="dba30">
                     <constraints>
                       <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="32"/>
+                        <preferred-size width="-1" height="24"/>
                       </grid>
                     </constraints>
                   </vspacer>
@@ -396,7 +396,7 @@
                     </constraints>
                     <properties>
                       <font name=".AppleSystemUIFont" size="14" style="1"/>
-                      <text value="Phone: "/>
+                      <text value="Teléfono "/>
                     </properties>
                   </component>
                 </children>
@@ -426,7 +426,7 @@
                   <vspacer id="3d23b">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="16"/>
+                        <preferred-size width="-1" height="12"/>
                       </grid>
                     </constraints>
                   </vspacer>
@@ -480,7 +480,7 @@
                   <vspacer id="8606a">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="1" use-parent-layout="false">
-                        <preferred-size width="-1" height="16"/>
+                        <preferred-size width="-1" height="12"/>
                       </grid>
                     </constraints>
                   </vspacer>
@@ -534,7 +534,7 @@
                   <vspacer id="55fa0">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                        <preferred-size width="-1" height="16"/>
+                        <preferred-size width="-1" height="12"/>
                       </grid>
                     </constraints>
                   </vspacer>
