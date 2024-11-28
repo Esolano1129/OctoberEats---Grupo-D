@@ -169,7 +169,7 @@
                       <background color="-1708317"/>
                       <caretColor color="-1708317"/>
                       <font name=".AppleSystemUIFont" size="14" style="0"/>
-                      <margin top="2" left="8" bottom="2" right="6"/>
+                      <margin top="2" left="9" bottom="2" right="6"/>
                     </properties>
                   </component>
                 </children>
@@ -311,7 +311,7 @@
               <vspacer id="7a099">
                 <constraints>
                   <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                    <preferred-size width="-1" height="32"/>
+                    <preferred-size width="-1" height="40"/>
                   </grid>
                 </constraints>
               </vspacer>
