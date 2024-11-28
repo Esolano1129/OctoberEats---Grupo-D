@@ -1,0 +1,123 @@
+Index: OctberEatsProject - Grupo D/src/main/java/org/example/Login.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\n\nimport javax.swing.*;\nimport java.awt.event.ActionEvent;\nimport java.awt.event.ActionListener;\nimport java.sql.PreparedStatement;\nimport java.sql.ResultSet;\n\npublic class Login extends JFrame{\n    private JLabel PassLabel;\n    private JLabel UsernameLabel;\n    private JTextField UsernameTxt;\n    private JPasswordField PasswordJPassField;\n    private JButton LoginButton;\n    private JButton RegisterButton;\n    private JPanel MainPanel;\n    private JLabel cuenta;\n    private JLabel logo;\n\n\n    public Login(){\n        setContentPane(MainPanel);\n        setDefaultCloseOperation(EXIT_ON_CLOSE);\n        setLocationRelativeTo(null);\n        setSize(1920,1080);\n\n        DBConextion NewConextion = new DBConextion();\n        NewConextion.StablishConection();\n\n        LoginButton.addActionListener(new ActionListener() {\n            @Override\n            public void actionPerformed(ActionEvent e) {\n                validaUsuario(UsernameTxt, PasswordJPassField);\n            }\n        });\n\n        RegisterButton.addActionListener(new ActionListener() {\n            @Override\n            public void actionPerformed(ActionEvent e) {\n                Register newRegister = new Register();\n                newRegister.setVisible(true);\n                dispose();\n            }\n        });\n\n    }\n    public void validaUsuario(JTextField usernameTxt, JPasswordField PasswordJPassField) {\n\n        try {\n            ResultSet rs = null;\n            PreparedStatement ps = null;\n\n            DBConextion conection = new DBConextion();\n\n            String consult = \"SELECT * FROM OctoberEatsDB.Usersv2 WHERE Usersv2.Usernames = (?) AND Usersv2.Passwords = (?);\";\n            ps = conection.StablishConection().prepareStatement(consult);\n\n            String Pass = String.valueOf(PasswordJPassField.getPassword());\n\n            ps.setString(1, UsernameTxt.getText());\n            ps.setString(2, Pass);\n\n            rs = ps.executeQuery();\n\n            if (rs.next()) {\n\n                JOptionPane.showMessageDialog(null, \"Welcome to October Eats\");\n                dispose();\n                Menu principalMenu = new Menu();\n                principalMenu.setVisible(true);\n            } else {\n                JOptionPane.showMessageDialog(null, \"Access Denied: Wrong Username or Password\");\n            }\n\n\n        } catch (Exception error) {\n            JOptionPane.showMessageDialog(null, \"ERROR: \" + error.toString());\n        }\n\n\n      }\n\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OctberEatsProject - Grupo D/src/main/java/org/example/Login.java b/OctberEatsProject - Grupo D/src/main/java/org/example/Login.java
+--- a/OctberEatsProject - Grupo D/src/main/java/org/example/Login.java	(revision 932d5db5b4dda3f95785a4d4b00176682cb3c6b6)
++++ b/OctberEatsProject - Grupo D/src/main/java/org/example/Login.java	(date 1732491005273)
+@@ -80,4 +80,6 @@
+ 
+       }
+ 
++
++
+ }
+\ No newline at end of file
+Index: OctberEatsProject - Grupo D/src/main/java/org/example/Login.form
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<form xmlns=\"http://www.intellij.com/uidesigner/form/\" version=\"1\" bind-to-class=\"org.example.Login\">\n  <grid id=\"27dc6\" binding=\"MainPanel\" layout-manager=\"GridLayoutManager\" row-count=\"10\" column-count=\"3\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\n    <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n    <constraints>\n      <xy x=\"20\" y=\"20\" width=\"438\" height=\"348\"/>\n    </constraints>\n    <properties/>\n    <border type=\"none\"/>\n    <children>\n      <component id=\"ca401\" class=\"javax.swing.JPasswordField\" binding=\"PasswordJPassField\">\n        <constraints>\n          <grid row=\"5\" column=\"0\" row-span=\"1\" col-span=\"3\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\n            <preferred-size width=\"238\" height=\"34\"/>\n          </grid>\n        </constraints>\n        <properties/>\n      </component>\n      <component id=\"ec18f\" class=\"javax.swing.JLabel\" binding=\"PassLabel\">\n        <constraints>\n          <grid row=\"4\" column=\"0\" row-span=\"1\" col-span=\"3\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"8\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\">\n            <preferred-size width=\"100\" height=\"24\"/>\n          </grid>\n        </constraints>\n        <properties>\n          <font name=\".AppleSystemUIFont\" size=\"14\" style=\"1\"/>\n          <text value=\"Contraseña\"/>\n        </properties>\n      </component>\n      <component id=\"c385c\" class=\"javax.swing.JLabel\" binding=\"UsernameLabel\">\n        <constraints>\n          <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"3\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"8\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\">\n            <preferred-size width=\"238\" height=\"35\"/>\n          </grid>\n        </constraints>\n        <properties>\n          <font name=\".AppleSystemUIFont\" size=\"14\" style=\"1\"/>\n          <text value=\"Usuario\"/>\n        </properties>\n      </component>\n      <component id=\"8b4ba\" class=\"javax.swing.JTextField\" binding=\"UsernameTxt\">\n        <constraints>\n          <grid row=\"2\" column=\"0\" row-span=\"1\" col-span=\"3\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\n            <preferred-size width=\"238\" height=\"34\"/>\n          </grid>\n        </constraints>\n        <properties/>\n      </component>\n      <grid id=\"b55da\" layout-manager=\"GridLayoutManager\" row-count=\"1\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <grid row=\"7\" column=\"0\" row-span=\"1\" col-span=\"3\" vsize-policy=\"3\" hsize-policy=\"3\" anchor=\"0\" fill=\"3\" indent=\"0\" use-parent-layout=\"false\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"83bc0\" class=\"javax.swing.JButton\" binding=\"LoginButton\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\n                <preferred-size width=\"238\" height=\"34\"/>\n              </grid>\n            </constraints>\n            <properties>\n              <text value=\"Iniciar Sesión\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"12de4\" layout-manager=\"GridLayoutManager\" row-count=\"1\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <grid row=\"6\" column=\"0\" row-span=\"1\" col-span=\"3\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"3\" indent=\"0\" use-parent-layout=\"false\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children/>\n      </grid>\n      <grid id=\"f2e24\" layout-manager=\"GridLayoutManager\" row-count=\"1\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <grid row=\"8\" column=\"0\" row-span=\"1\" col-span=\"3\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"3\" indent=\"0\" use-parent-layout=\"false\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children/>\n      </grid>\n      <component id=\"b2f0f\" class=\"javax.swing.JLabel\" binding=\"cuenta\">\n        <constraints>\n          <grid row=\"9\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"8\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n        </constraints>\n        <properties>\n          <text value=\"No tengo cuenta\"/>\n        </properties>\n      </component>\n      <grid id=\"bd943\" layout-manager=\"GridLayoutManager\" row-count=\"1\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <grid row=\"9\" column=\"2\" row-span=\"1\" col-span=\"1\" vsize-policy=\"3\" hsize-policy=\"3\" anchor=\"0\" fill=\"3\" indent=\"0\" use-parent-layout=\"false\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"f4d51\" class=\"javax.swing.JButton\" binding=\"RegisterButton\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Registrarme\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n      <grid id=\"b605b\" layout-manager=\"GridLayoutManager\" row-count=\"1\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <grid row=\"3\" column=\"0\" row-span=\"1\" col-span=\"3\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"3\" indent=\"0\" use-parent-layout=\"false\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children/>\n      </grid>\n      <grid id=\"ac69e\" layout-manager=\"GridLayoutManager\" row-count=\"1\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <grid row=\"9\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"3\" hsize-policy=\"3\" anchor=\"0\" fill=\"3\" indent=\"0\" use-parent-layout=\"false\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children/>\n      </grid>\n      <grid id=\"9ac67\" layout-manager=\"GridLayoutManager\" row-count=\"1\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\n        <constraints>\n          <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"3\" vsize-policy=\"3\" hsize-policy=\"3\" anchor=\"0\" fill=\"2\" indent=\"0\" use-parent-layout=\"false\"/>\n        </constraints>\n        <properties/>\n        <border type=\"none\"/>\n        <children>\n          <component id=\"241c9\" class=\"javax.swing.JLabel\" binding=\"logo\">\n            <constraints>\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"8\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\n            </constraints>\n            <properties>\n              <text value=\"Label\"/>\n            </properties>\n          </component>\n        </children>\n      </grid>\n    </children>\n  </grid>\n</form>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OctberEatsProject - Grupo D/src/main/java/org/example/Login.form b/OctberEatsProject - Grupo D/src/main/java/org/example/Login.form
+--- a/OctberEatsProject - Grupo D/src/main/java/org/example/Login.form	(revision 932d5db5b4dda3f95785a4d4b00176682cb3c6b6)
++++ b/OctberEatsProject - Grupo D/src/main/java/org/example/Login.form	(date 1732491107346)
+@@ -3,14 +3,16 @@
+   <grid id="27dc6" binding="MainPanel" layout-manager="GridLayoutManager" row-count="10" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+     <margin top="0" left="0" bottom="0" right="0"/>
+     <constraints>
+-      <xy x="20" y="20" width="438" height="348"/>
++      <xy x="20" y="20" width="346" height="1016"/>
+     </constraints>
+-    <properties/>
++    <properties>
++      <foreground color="-1447697"/>
++    </properties>
+     <border type="none"/>
+     <children>
+       <component id="ca401" class="javax.swing.JPasswordField" binding="PasswordJPassField">
+         <constraints>
+-          <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
++          <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
+             <preferred-size width="238" height="34"/>
+           </grid>
+         </constraints>
+@@ -49,14 +51,16 @@
+       <grid id="b55da" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+         <margin top="0" left="0" bottom="0" right="0"/>
+         <constraints>
+-          <grid row="7" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
++          <grid row="7" column="0" row-span="1" col-span="3" vsize-policy="1" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
++            <preferred-size width="242" height="613"/>
++          </grid>
+         </constraints>
+         <properties/>
+         <border type="none"/>
+         <children>
+           <component id="83bc0" class="javax.swing.JButton" binding="LoginButton">
+             <constraints>
+-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
++              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                 <preferred-size width="238" height="34"/>
+               </grid>
+             </constraints>
+@@ -69,7 +73,7 @@
+       <grid id="12de4" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+         <margin top="0" left="0" bottom="0" right="0"/>
+         <constraints>
+-          <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
++          <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="2" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+         </constraints>
+         <properties/>
+         <border type="none"/>
+@@ -78,7 +82,7 @@
+       <grid id="f2e24" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+         <margin top="0" left="0" bottom="0" right="0"/>
+         <constraints>
+-          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
++          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="2" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+         </constraints>
+         <properties/>
+         <border type="none"/>
+@@ -102,7 +106,7 @@
+         <children>
+           <component id="f4d51" class="javax.swing.JButton" binding="RegisterButton">
+             <constraints>
+-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
++              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+             </constraints>
+             <properties>
+               <text value="Registrarme"/>
+@@ -122,23 +126,23 @@
+       <grid id="ac69e" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+         <margin top="0" left="0" bottom="0" right="0"/>
+         <constraints>
+-          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
++          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+         </constraints>
+         <properties/>
+         <border type="none"/>
+         <children/>
+       </grid>
+-      <grid id="9ac67" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
++      <grid id="5b14a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+         <margin top="0" left="0" bottom="0" right="0"/>
+         <constraints>
+-          <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
++          <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+         </constraints>
+         <properties/>
+         <border type="none"/>
+         <children>
+-          <component id="241c9" class="javax.swing.JLabel" binding="logo">
++          <component id="21461" class="javax.swing.JLabel" binding="logo">
+             <constraints>
+-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
++              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+             </constraints>
+             <properties>
+               <text value="Label"/>

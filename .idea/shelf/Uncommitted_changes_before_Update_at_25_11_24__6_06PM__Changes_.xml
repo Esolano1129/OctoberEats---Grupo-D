@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_25_11_24,_6_06 PM_[Changes]" date="1732579618700" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_11_24,_6_06 PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 25/11/24, 6:06 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="OctberEatsProject - Grupo D/target/classes/org/example/Login.class" />
+    <option name="AFTER_PATH" value="OctberEatsProject - Grupo D/target/classes/org/example/Login.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_11_24,_6_06 PM_[Changes]/Login.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OctberEatsProject - Grupo D/target/classes/org/example/DBConextion.class" />
+    <option name="AFTER_PATH" value="OctberEatsProject - Grupo D/target/classes/org/example/DBConextion.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_11_24,_6_06 PM_[Changes]/DBConextion.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="OctberEatsProject - Grupo D/target/classes/org/example/Restaurant.class" />
+    <option name="AFTER_PATH" value="OctberEatsProject - Grupo D/target/classes/org/example/Restaurant.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_11_24,_6_06 PM_[Changes]/Restaurant.class" />
+  </binary>
+</changelist>
