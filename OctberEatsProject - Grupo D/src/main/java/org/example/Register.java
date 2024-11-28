@@ -80,7 +80,7 @@ public class Register extends JFrame {
         String query = "INSERT INTO Octobereatsdb.Usersv2(Usernames,Passwords,FirstName,LastName,Phone,Email,Age,Address)VALUES(?,?,?,?,?,?,?,?);";
 
         try {
-            // Conexión a la base de datos
+
             DBConextion db = new DBConextion();
             Connection conn = db.StablishConection();
 
