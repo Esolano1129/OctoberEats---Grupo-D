@@ -1,4 +1,4 @@
-package org.example.Mysql;
+package org.example;
 
 public class RestaurantV2 {
 
