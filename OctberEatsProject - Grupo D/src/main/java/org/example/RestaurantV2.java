@@ -14,9 +14,6 @@ public class RestaurantV2 extends JFrame {
     private JLabel AddressLabel;
     private JLabel ScheduleLabel;
     private JLabel RatingLabel;
-    private JLabel CategoryLabel;
-    private JLabel PhoneLabel;
-    private JLabel EmailLabel;
     private JTextField TxtRestaurantName;
     private JTextField TxtAddress;
     private JTextField TxtSchedule;
@@ -24,12 +21,23 @@ public class RestaurantV2 extends JFrame {
     private JTextField TxtCategory;
     private JTextField TxtPhone;
     private JTextField TxtEmail;
-    private JTable DataJTable;
     private JButton Createbutton;
     private JButton DeleteButton;
     private JButton UpdateButton;
-    private JButton RefreshListButton;
     private JPanel RestPanel;
+    private JLabel logo;
+    private JPanel sideMenu;
+    private JButton inicioButton;
+    private JLabel footerText;
+    private JPanel footer;
+    private JPanel centralPanel;
+    private JButton RefreshListButton;
+    private JLabel CategoryLabel;
+    private JLabel PhoneLabel;
+    private JLabel EmailLabel;
+    private JLabel restTitle;
+    private JButton regresarButton;
+    private JTable DataJTable;
 
 
     public RestaurantV2(){
