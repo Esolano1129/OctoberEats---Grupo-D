@@ -30,6 +30,7 @@ public class RestaurantV2 extends JFrame {
     private JButton UpdateButton;
     private JButton RefreshListButton;
     private JPanel RestPanel;
+    private JButton backToMenuButton;
 
 
     public RestaurantV2(){
@@ -43,6 +44,15 @@ public class RestaurantV2 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CreateRestaurant();
+            }
+        });
+
+        backToMenuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Menu menu = new Menu();
+                menu.setVisible(true);
+                dispose();
             }
         });
     }
