@@ -38,6 +38,7 @@ public class RestaurantV2 extends JFrame {
     private JLabel restTitle;
     private JButton regresarButton;
     private JTable DataJTable;
+    private JScrollPane scrollPanel;
 
 
     public RestaurantV2(){
