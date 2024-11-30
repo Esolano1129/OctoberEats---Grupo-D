@@ -1,10 +1,12 @@
 package org.example;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RestaurantV2 extends JFrame {
@@ -52,6 +54,12 @@ public class RestaurantV2 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CreateRestaurant();
+            }
+        });
+        RefreshListButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RefreshTable();
             }
         });
     }
@@ -108,5 +116,50 @@ public class RestaurantV2 extends JFrame {
         }
 
     }
+    public void RefreshTable() {
+        String sql = "SELECT * FROM OctoberEatsDB.Restaurants;";
+        DBConextion con = null;
+        ResultSet resultado = null;
+
+        try {
+
+            con = new DBConextion();
+            resultado = con.getResult(sql);
+
+
+            DefaultTableModel md = new DefaultTableModel();
+            md.setColumnIdentifiers(new Object[]{"Id", "Name", "Address", "Schedule", "Rating", "Category", "Phone", "Email"});
+
+
+            while (resultado.next()) {
+                md.addRow(new Object[]{
+                        resultado.getInt("Id"),
+                        resultado.getString("RestaurantName"),
+                        resultado.getString("Address"),
+                        resultado.getString("RestaurantSchedule"),
+                        resultado.getString("Rating"),
+                        resultado.getString("Category"),
+                        resultado.getString("Phone"),
+                        resultado.getString("Email")
+                });
+            }
+
+
+            DataJTable.setModel(md);
+
+        } catch (SQLException e) {
+            System.err.println("Error al refrescar la tabla: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+
+            try {
+                if (resultado != null) resultado.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar recursos: " + e.getMessage());
+            }
+        }
+    }
+
 
 }
