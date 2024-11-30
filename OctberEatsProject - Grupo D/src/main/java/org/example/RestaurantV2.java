@@ -44,7 +44,7 @@ public class RestaurantV2 extends JFrame {
     private JButton clearButton;
 
 
-    public RestaurantV2(){
+    public RestaurantV2() {
         setContentPane(RestPanel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -100,7 +100,7 @@ public class RestaurantV2 extends JFrame {
 
     }
 
-    public void CreateRestaurant(){
+    public void CreateRestaurant() {
 
         String RestaurantName = TxtRestaurantName.getText();
         String Address = TxtAddress.getText();
@@ -111,11 +111,10 @@ public class RestaurantV2 extends JFrame {
         String Email = TxtEmail.getText();
 
 
-
         String query = "INSERT INTO OctoberEatsDB.Restaurants(RestaurantName,Address,RestaurantSchedule,Rating,Category,Phone,Email) VALUES(?,?,?,?,?,?,?);";
 
         try {
-            // Conexión a la base de datos
+
             DBConextion db = new DBConextion();
             Connection conn = db.StablishConection();
 
@@ -152,6 +151,7 @@ public class RestaurantV2 extends JFrame {
         }
 
     }
+
     public void RefreshTable() {
         String sql = "SELECT * FROM OctoberEatsDB.Restaurants;";
         DBConextion con = null;
@@ -192,6 +192,7 @@ public class RestaurantV2 extends JFrame {
             }
         }
     }
+
     public void DeleteRestaurant() {
 
         int selectedRow = DataJTable.getSelectedRow();
@@ -236,6 +237,7 @@ public class RestaurantV2 extends JFrame {
             }
         }
     }
+
     private void UpdateRestaurant() {
 
         int selectedRow = DataJTable.getSelectedRow();
@@ -297,5 +299,4 @@ public class RestaurantV2 extends JFrame {
             }
         }
     }
-
 }
