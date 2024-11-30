@@ -39,6 +39,7 @@ public class RestaurantV2 extends JFrame {
     private JButton regresarButton;
     private JTable DataJTable;
     private JScrollPane scrollPanel;
+    private JButton logout;
 
 
     public RestaurantV2(){
@@ -54,6 +55,25 @@ public class RestaurantV2 extends JFrame {
                 CreateRestaurant();
             }
         });
+
+        inicioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Menu menu = new Menu();
+                menu.setVisible(true);
+                dispose();
+            }
+        });
+
+        logout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Login login = new Login();
+                login.setVisible(true);
+                dispose();
+            }
+        });
+
     }
 
     public void CreateRestaurant(){

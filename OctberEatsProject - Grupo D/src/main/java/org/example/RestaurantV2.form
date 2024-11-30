@@ -10,11 +10,11 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="17daa" binding="sideMenu" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="17daa" binding="sideMenu" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="0" column="0" row-span="4" col-span="1" vsize-policy="3" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="250" height="1016"/>
+          <grid row="0" column="0" row-span="4" col-span="1" vsize-policy="3" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="250" height="1020"/>
           </grid>
         </constraints>
         <properties>
@@ -25,8 +25,8 @@
           <grid id="855b4" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="-1" height="64"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <preferred-size width="-1" height="72"/>
               </grid>
             </constraints>
             <properties>
@@ -44,45 +44,99 @@
               </component>
             </children>
           </grid>
-          <grid id="d65bd" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="d65bd" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-1"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="2c488" class="javax.swing.JButton" binding="inicioButton" default-binding="true">
+              <grid id="f9a60" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="20" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="250" height="40"/>
-                  </grid>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-1"/>
-                  <borderPainted value="false"/>
-                  <focusPainted value="false"/>
-                  <font name=".AppleSystemUIFont" size="14" style="1"/>
-                  <foreground color="-14584561"/>
-                  <horizontalAlignment value="2"/>
-                  <text value="Inicio"/>
                 </properties>
-              </component>
-              <vspacer id="54c53">
+                <border type="none"/>
+                <children>
+                  <component id="8f6d6" class="javax.swing.JButton" binding="logout">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="250" height="40"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-1"/>
+                      <borderPainted value="false"/>
+                      <focusPainted value="false"/>
+                      <font name=".AppleSystemUIFont" size="14" style="1"/>
+                      <foreground color="-5043431"/>
+                      <horizontalAlignment value="2"/>
+                      <text value="&lt;- Cerrar Sesión"/>
+                    </properties>
+                  </component>
+                  <vspacer id="1c1fd">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="4" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                        <preferred-size width="-1" height="32"/>
+                      </grid>
+                    </constraints>
+                  </vspacer>
+                </children>
+              </grid>
+              <grid id="9d7" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="20" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="2c488" class="javax.swing.JButton" binding="inicioButton" default-binding="true">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="250" height="40"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-1"/>
+                      <borderPainted value="false"/>
+                      <focusPainted value="false"/>
+                      <font name=".AppleSystemUIFont" size="14" style="1"/>
+                      <foreground color="-14584561"/>
+                      <horizontalAlignment value="2"/>
+                      <text value="★ Inicio"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <vspacer id="f835b">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                    <preferred-size width="-1" height="800"/>
+                    <preferred-size width="-1" height="64"/>
                   </grid>
                 </constraints>
               </vspacer>
             </children>
           </grid>
-          <vspacer id="f835b">
+          <vspacer id="6b93b">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                <preferred-size width="-1" height="64"/>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <preferred-size width="-1" height="24"/>
+              </grid>
+            </constraints>
+          </vspacer>
+          <vspacer id="2e5e1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <preferred-size width="-1" height="24"/>
               </grid>
             </constraints>
           </vspacer>
@@ -91,11 +145,15 @@
       <grid id="2ed4c" binding="footer" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="4" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="-1" height="64"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-13022161"/>
+          <foreground color="-1"/>
+          <opaque value="true"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="1d61d" class="javax.swing.JLabel" binding="footerText">
@@ -103,7 +161,11 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="October Eats es una marca registrada"/>
+              <background color="-13022161"/>
+              <font name=".AppleSystemUIFont" size="14" style="0"/>
+              <foreground color="-1"/>
+              <opaque value="false"/>
+              <text value="© October Eats es una marca registrada"/>
             </properties>
           </component>
         </children>
@@ -111,28 +173,28 @@
       <vspacer id="547fd">
         <constraints>
           <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="-1" height="64"/>
+            <preferred-size width="-1" height="40"/>
           </grid>
         </constraints>
       </vspacer>
       <hspacer id="3736f">
         <constraints>
           <grid row="1" column="4" row-span="2" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="64" height="-1"/>
+            <preferred-size width="40" height="-1"/>
           </grid>
         </constraints>
       </hspacer>
       <hspacer id="72246">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="64" height="-1"/>
+            <preferred-size width="40" height="-1"/>
           </grid>
         </constraints>
       </hspacer>
       <vspacer id="65439">
         <constraints>
           <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="-1" height="64"/>
+            <preferred-size width="-1" height="40"/>
           </grid>
         </constraints>
       </vspacer>
@@ -145,13 +207,13 @@
           <background color="-1"/>
           <enabled value="false"/>
           <focusable value="true"/>
-          <horizontalScrollBarPolicy value="32"/>
+          <horizontalScrollBarPolicy value="30"/>
           <opaque value="false"/>
           <visible value="true"/>
         </properties>
         <border type="none"/>
         <children>
-          <grid id="3181a" binding="centralPanel" layout-manager="GridLayoutManager" row-count="11" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="3181a" binding="centralPanel" layout-manager="GridLayoutManager" row-count="14" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="40" left="40" bottom="40" right="40"/>
             <constraints/>
             <properties>
@@ -159,10 +221,10 @@
             </properties>
             <border type="none"/>
             <children>
-              <grid id="e4126" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="e4126" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                  <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="250" height="-1"/>
                   </grid>
                 </constraints>
@@ -198,21 +260,23 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
                   </grid>
                 </children>
               </grid>
-              <grid id="39d6" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="39d6" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="250" height="-1"/>
                   </grid>
                 </constraints>
                 <properties>
                   <background color="-1"/>
+                  <font name=".AppleSystemUIFont" size="14" style="0"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -243,13 +307,14 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
                   </grid>
                 </children>
               </grid>
-              <grid id="5d12a" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="5d12a" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -288,16 +353,17 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
                   </grid>
                 </children>
               </grid>
-              <grid id="2a95e" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="2a95e" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                  <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="250" height="-1"/>
                   </grid>
                 </constraints>
@@ -333,6 +399,7 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
@@ -342,7 +409,7 @@
               <grid id="df19a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="13" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-1"/>
@@ -351,10 +418,17 @@
                 <children>
                   <component id="720e7" class="javax.swing.JButton" binding="UpdateButton">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="-1" height="47"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <text value="Update"/>
+                      <background color="-16734529"/>
+                      <borderPainted value="false"/>
+                      <font name=".AppleSystemUIFont" size="14" style="1"/>
+                      <foreground color="-1"/>
+                      <opaque value="true"/>
+                      <text value="Actualizar"/>
                     </properties>
                   </component>
                 </children>
@@ -362,7 +436,7 @@
               <grid id="ac10e" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="13" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-1"/>
@@ -371,16 +445,22 @@
                 <children>
                   <component id="2b975" class="javax.swing.JButton" binding="RefreshListButton">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="-1" height="47"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <background color="-1"/>
+                      <background color="-16739212"/>
+                      <borderPainted value="false"/>
+                      <font name=".AppleSystemUIFont" size="14" style="1"/>
+                      <foreground color="-1"/>
+                      <opaque value="true"/>
                       <text value="Refresh List"/>
                     </properties>
                   </component>
                 </children>
               </grid>
-              <grid id="148eb" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="148eb" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -419,16 +499,17 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
                   </grid>
                 </children>
               </grid>
-              <grid id="3685d" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="3685d" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="5" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                  <grid row="6" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="250" height="-1"/>
                   </grid>
                 </constraints>
@@ -464,16 +545,17 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
                   </grid>
                 </children>
               </grid>
-              <grid id="51a81" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="51a81" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="6" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                  <grid row="8" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="250" height="-1"/>
                   </grid>
                 </constraints>
@@ -509,6 +591,7 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
@@ -553,7 +636,7 @@
               <grid id="f3c06" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="9" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="12" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-1"/>
@@ -598,7 +681,7 @@
               <grid id="d546b" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="11" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-1"/>
@@ -633,10 +716,10 @@
                   </vspacer>
                 </children>
               </grid>
-              <grid id="9926a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="9926a" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
-                  <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                  <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="120" height="47"/>
                   </grid>
                 </constraints>
@@ -658,11 +741,39 @@
                       <font name=".AppleSystemUIFont" size="14" style="1"/>
                       <foreground color="-1"/>
                       <opaque value="true"/>
-                      <text value="Delete"/>
+                      <text value="Eliminar"/>
                     </properties>
                   </component>
+                  <hspacer id="1c56e">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="240" height="-1"/>
+                      </grid>
+                    </constraints>
+                  </hspacer>
                 </children>
               </grid>
+              <vspacer id="dadae">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <preferred-size width="-1" height="16"/>
+                  </grid>
+                </constraints>
+              </vspacer>
+              <vspacer id="f5f69">
+                <constraints>
+                  <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <preferred-size width="-1" height="16"/>
+                  </grid>
+                </constraints>
+              </vspacer>
+              <vspacer id="fcf1a">
+                <constraints>
+                  <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <preferred-size width="-1" height="16"/>
+                  </grid>
+                </constraints>
+              </vspacer>
             </children>
           </grid>
         </children>
