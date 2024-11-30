@@ -7,9 +7,11 @@ public class Main {
    //Login login = new Login();
    //login.setVisible(true);
 
-        RestaurantV2 restv2 = new RestaurantV2();
-        restv2.setVisible(true);
+        //RestaurantV2 restv2 = new RestaurantV2();
+        // restv2.setVisible(true);
 
+        ProductItemv2 product = new ProductItemv2();
+        product.setVisible(true);
     }
 }
 
