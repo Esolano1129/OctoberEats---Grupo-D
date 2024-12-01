@@ -170,7 +170,7 @@ public class User extends JFrame {
         int age = Integer.parseInt(TxtAge.getText());
         String address = TxtAddress.getText();
 
-        String sql = "UPDATE OctoberEatsDB.Usersv2 SET UserName = ?, Password = ?, Firstname = ?, LastName = ?, Phone = ?, email = ?, Address = ?, Age = ? WHERE ID = ?;
+        String sql = "UPDATE OctoberEatsDB.Usersv2 SET UserName = ?, Password = ?, Firstname = ?, LastName = ?, Phone = ?, email = ?, Address = ?, Age = ? WHERE ID = ?";
         DBConextion con = null;
 
         try {
