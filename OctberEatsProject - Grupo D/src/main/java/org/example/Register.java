@@ -35,7 +35,7 @@ public class Register extends JFrame {
         setContentPane(RegisterPanel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setSize(1920, 1080);
+        setSize(600, 600);
 
 
         registerButton.addActionListener(new ActionListener() {

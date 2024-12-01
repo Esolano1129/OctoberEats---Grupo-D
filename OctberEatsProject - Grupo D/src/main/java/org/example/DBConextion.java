@@ -1,12 +1,11 @@
 package org.example;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DBConextion {
 
     Connection conect;
+    PreparedStatement prep;
 
     String url = "jdbc:mysql://localhost:3306/octobereatsdb";
     String username = "root";
@@ -24,41 +23,31 @@ public class DBConextion {
         return conect;
     }
 
-    public static class Categoria {
-        String name;
-        String image;
+    public ResultSet getResult(String sql) {
+        ResultSet result = null;
+        try {
+            if (conect == null || conect.isClosed()) {
 
-        public Categoria() {
+                conect = StablishConection();
+            }
+            prep = conect.prepareStatement(sql);
+            result = prep.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        return result;
+    }
 
-        public Categoria(String name, String image) {
-            this.name = name;
-            this.image = image;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getImage() {
-            return image;
-        }
-
-        public void setImage(String image) {
-            this.image = image;
-        }
-
-        public void SelectCategory() {
-        }
-        public void EditCategory() {
-        }
-        public void DeleteCategory() {
-        }
-        public void CreateCategory() {
+    public void close() {
+        try {
+            if (prep != null && !prep.isClosed()) {
+                prep.close();
+            }
+            if (conect != null && !conect.isClosed()) {
+                conect.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
