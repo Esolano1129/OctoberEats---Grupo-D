@@ -29,6 +29,9 @@ public class User extends JFrame {
     private JScrollPane scrollPanel;
     private JButton clearButton;
     private JButton RefreshListButton;
+    private JButton UpdateButton;
+    private JButton DeleteButton;
+
 
     public User() {
         setContentPane(MainPanel);
@@ -62,7 +65,12 @@ public class User extends JFrame {
                 changePassword();
             }
         });
-
+        UpdateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateUser();
+            }
+        });
         createOrderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -81,6 +89,12 @@ public class User extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 updateUser();
+            }
+        });
+        DeleteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DeleteUser();
             }
         });
     }
@@ -238,6 +252,50 @@ public class User extends JFrame {
                 if (con != null) con.close();
             } catch (SQLException e) {
                 System.err.println("Error al cerrar recursos: " + e.getMessage());
+            }
+        }
+    }
+    public void DeleteUser() {
+
+        int selectedRow = DataJTable.getSelectedRow();
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(null, "Por favor, selecciona una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        DefaultTableModel model = (DefaultTableModel) DataJTable.getModel();
+        int id = (int) model.getValueAt(selectedRow, 0);
+
+
+        int confirm = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas eliminar esta fila?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
+        if (confirm != JOptionPane.YES_OPTION) {
+            return;
+        }
+
+        String sql = "DELETE FROM OctoberEatsDB.Userv2 WHERE Id = ?";
+        DBConextion con = null;
+
+        try {
+            con = new DBConextion();
+            Connection connection = con.StablishConection();
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, id);
+            int rowsAffected = stmt.executeUpdate();
+
+            if (rowsAffected > 0) {
+
+                model.removeRow(selectedRow);
+                JOptionPane.showMessageDialog(null, "Fila eliminada exitosamente.");
+            } else {
+                JOptionPane.showMessageDialog(null, "No se pudo eliminar la fila.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error al eliminar la fila de la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            if (con != null) {
+                con.close();
             }
         }
     }
