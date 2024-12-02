@@ -4,6 +4,10 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -54,7 +58,38 @@ public class RestaurantV2 extends JFrame {
         Createbutton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CreateRestaurant();
+                String[] datos = {
+                        TxtRestaurantName.getText(),
+                        TxtAddress.getText(),
+                        TxtSchedule.getText(),
+                        TxtRating.getText(),
+                        TxtCategory.getText(),
+                        TxtPhone.getText(),
+                        TxtEmail.getText()
+                };
+                //Usamos el swingworker para ejecutar el thread en segundo plano
+                new SwingWorker<Object, Void>() {
+                    @Override
+                    protected Object doInBackground() throws Exception {
+
+                        return enviarSolicitud("CREATE", datos);
+                    }
+
+                    @Override
+                    protected void done() {
+                        try {
+                            Object respuesta = get();
+
+                            if ("OK".equals(respuesta)) {
+                                JOptionPane.showMessageDialog(null, "Restaurante creado exitosamente");
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Error al crear el restaurante");
+                            }
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, "Error de comunicación con el servidor");
+                        }
+                    }
+                }.execute();  //Ejecuta el swingworker
             }
         });
         RefreshListButton.addActionListener(new ActionListener() {
@@ -100,21 +135,29 @@ public class RestaurantV2 extends JFrame {
 
     }
 
-    public void CreateRestaurant() {
+    public void CreateRestaurant(String[] datos) {
+        if (datos == null || datos.length < 7) {
+            JOptionPane.showMessageDialog(null, "Datos inválidos para crear restaurante.");
+            return;
+        }
 
-        String RestaurantName = TxtRestaurantName.getText();
-        String Address = TxtAddress.getText();
-        String RestaurantSchedule = TxtSchedule.getText();
-        String Rating = TxtRating.getText();
-        String Category = TxtCategory.getText();
-        String Phone = TxtPhone.getText();
-        String Email = TxtEmail.getText();
+        String RestaurantName = datos[0];
+        String Address = datos[1];
+        String RestaurantSchedule = datos[2];
+        String Rating = datos[3];
+        String Category = datos[4];
+        String Phone = datos[5];
+        String Email = datos[6];
 
+        if (RestaurantName.isEmpty() || Address.isEmpty() || RestaurantSchedule.isEmpty() ||
+                Rating.isEmpty() || Category.isEmpty() || Phone.isEmpty() || Email.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, llena todos los campos.");
+            return;
+        }
 
-        String query = "INSERT INTO OctoberEatsDB.Restaurants(RestaurantName,Address,RestaurantSchedule,Rating,Category,Phone,Email) VALUES(?,?,?,?,?,?,?);";
+        String query = "INSERT INTO OctoberEatsDB.Restaurants(RestaurantName, Address, RestaurantSchedule, Rating, Category, Phone, Email) VALUES(?,?,?,?,?,?,?);";
 
         try {
-
             DBConextion db = new DBConextion();
             Connection conn = db.StablishConection();
 
@@ -128,28 +171,17 @@ public class RestaurantV2 extends JFrame {
                 preparedStatement.setString(6, Phone);
                 preparedStatement.setString(7, Email);
 
-
                 int rowsInserted = preparedStatement.executeUpdate();
 
                 if (rowsInserted > 0) {
-                    JOptionPane.showMessageDialog(null, "Restaurant Created");
-
-                    TxtRestaurantName.setText("");
-                    TxtAddress.setText("");
-                    TxtSchedule.setText("");
-                    TxtRating.setText("");
-                    TxtCategory.setText("");
-                    TxtPhone.setText("");
-                    TxtEmail.setText("");
-
+                    //JOptionPane.showMessageDialog(null, "Restaurant Created");
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Cannot established a connection with the data base.");
+                JOptionPane.showMessageDialog(null, "Cannot establish a connection with the database.");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error data insert: " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error inserting data: " + ex.getMessage());
         }
-
     }
 
     public void RefreshTable() {
@@ -297,6 +329,22 @@ public class RestaurantV2 extends JFrame {
             if (con != null) {
                 con.close();
             }
+        }
+    }
+    private Object enviarSolicitud(String operacion, Object datos) {
+        try (Socket socket = new Socket("127.0.0.1", 5432);
+             ObjectOutputStream salida = new ObjectOutputStream(socket.getOutputStream());
+             ObjectInputStream entrada = new ObjectInputStream(socket.getInputStream())) {
+
+            salida.writeObject(operacion);
+            if (datos != null) {
+                salida.writeObject(datos);
+            }
+
+            return entrada.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            System.err.println("Error al comunicarse con el servidor: " + e.getMessage());
+            return null;
         }
     }
 }
