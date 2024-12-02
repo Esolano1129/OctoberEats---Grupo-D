@@ -31,9 +31,6 @@ public class RestaurantV2 extends JFrame {
     private JButton DeleteButton;
     private JButton UpdateButton;
     private JPanel RestPanel;
-    private JLabel logo;
-    private JPanel sideMenu;
-    private JButton inicioButton;
     private JLabel footerText;
     private JPanel footer;
     private JPanel centralPanel;
@@ -45,6 +42,9 @@ public class RestaurantV2 extends JFrame {
     private JButton regresarButton;
     private JTable DataJTable;
     private JScrollPane scrollPanel;
+    private JPanel sideMenu;
+    private JLabel logo;
+    private JButton inicioButton;
     private JButton clearButton;
 
 

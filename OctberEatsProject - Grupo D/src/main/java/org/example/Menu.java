@@ -8,11 +8,20 @@ public class  Menu extends JFrame {
 
     private JButton restaurantsButton;
     private JButton productsButton;
-    private JButton usersButton;
+    private JButton usuariosButton;
     private JPanel MenuPanel;
-    private JPanel sideMenu;
     private JPanel centralPanel;
-    private JButton ordersButton;
+    private JButton órdenesButton;
+    private JLabel logo;
+    private JButton inicioButton;
+    private JButton restaurantesBttn;
+    private JPanel restBttnPanel;
+    private JButton productsBttn;
+    private JPanel productsBttnPanel;
+    private JPanel footer;
+    private JLabel footerText;
+    private JLabel menuWelcomeTitle;
+    private JPanel sideMenu;
 
 
     public Menu() {
@@ -20,6 +29,9 @@ public class  Menu extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setSize(1920, 1080);
+
+
+        menuWelcomeTitle.setText("¡Te damos la bienvenida, " );
 
 
         restaurantsButton.addActionListener(new ActionListener() {
