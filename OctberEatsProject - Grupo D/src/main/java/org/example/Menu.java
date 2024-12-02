@@ -8,9 +8,11 @@ public class  Menu extends JFrame {
 
     private JButton restaurantsButton;
     private JButton productsButton;
-    private JButton ordersButton;
     private JButton usersButton;
     private JPanel MenuPanel;
+    private JPanel sideMenu;
+    private JPanel centralPanel;
+    private JButton ordersButton;
 
 
     public Menu() {
