@@ -22,7 +22,7 @@ public class Order extends JFrame {
     private JButton updateOrderButton;
     private JPanel MainPanel;
     private JTable DataJTable;
-    
+
     public Order() {
         setContentPane(MainPanel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
