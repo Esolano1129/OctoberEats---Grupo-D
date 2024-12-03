@@ -125,7 +125,7 @@ public class User extends JFrame {
         //Crea una orden y pasa a la ventana de Order
         Order orderWindow = new Order();
         orderWindow.setVisible(true);
-        dispose();
+        dispose() ;
 
 
 
