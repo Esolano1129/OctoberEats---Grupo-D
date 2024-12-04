@@ -28,7 +28,7 @@ public class RestaurantV2 extends JFrame {
     private JTextField TxtPhone;
     private JTextField TxtEmail;
     private JButton Createbutton;
-    private JButton DeleteButton;
+    private JButton borrarButton;
     private JButton UpdateButton;
     private JPanel RestPanel;
     private JLabel footerText;
@@ -41,10 +41,10 @@ public class RestaurantV2 extends JFrame {
     private JLabel restTitle;
     private JButton regresarButton;
     private JTable DataJTable;
-    private JScrollPane scrollPanel;
     private JPanel sideMenu;
     private JLabel logo;
     private JButton inicioButton;
+    private JScrollPane scrollPanel;
     private JButton clearButton;
 
 
@@ -99,7 +99,7 @@ public class RestaurantV2 extends JFrame {
             }
         });
 
-        DeleteButton.addActionListener(new ActionListener() {
+        borrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DeleteRestaurant();
@@ -120,7 +120,7 @@ public class RestaurantV2 extends JFrame {
                 dispose();
             }
         });
-      /*  clearButton.addActionListener(new ActionListener() {
+      clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TxtRestaurantName.setText("");
@@ -131,7 +131,7 @@ public class RestaurantV2 extends JFrame {
                 TxtPhone.setText("");
                 TxtEmail.setText("");
             }
-        });*/
+        });
 
     }
 

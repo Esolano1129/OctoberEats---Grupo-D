@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="RestPanel" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="822" height="1234"/>
+      <xy x="20" y="20" width="828" height="1234"/>
     </constraints>
     <properties>
       <background color="-1708317"/>
@@ -30,13 +30,6 @@
           </component>
         </children>
       </grid>
-      <vspacer id="547fd">
-        <constraints>
-          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="-1" height="64"/>
-          </grid>
-        </constraints>
-      </vspacer>
       <hspacer id="3736f">
         <constraints>
           <grid row="1" column="4" row-span="2" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
@@ -58,18 +51,209 @@
           </grid>
         </constraints>
       </vspacer>
-      <scrollpane id="feae" binding="scrollPanel">
+      <grid id="ee0ac" binding="sideMenu" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="4" col-span="1" vsize-policy="3" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="250" height="1016"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="160d5" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="-1" height="64"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="9577f" class="javax.swing.JLabel" binding="logo">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="5cc45" layout-manager="GridLayoutManager" row-count="6" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="7a8e4" class="javax.swing.JButton" binding="inicioButton" default-binding="true">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="250" height="40"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                  <borderPainted value="false"/>
+                  <focusPainted value="false"/>
+                  <font name=".AppleSystemUIFont" size="14" style="1"/>
+                  <foreground color="-14584561"/>
+                  <horizontalAlignment value="2"/>
+                  <text value="Inicio"/>
+                </properties>
+              </component>
+              <vspacer id="f9c21">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                    <preferred-size width="-1" height="600"/>
+                  </grid>
+                </constraints>
+              </vspacer>
+              <grid id="2d2df" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="317ed" class="javax.swing.JButton">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="250" height="40"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-1"/>
+                      <borderPainted value="false"/>
+                      <focusPainted value="false"/>
+                      <font name=".AppleSystemUIFont" size="14" style="0"/>
+                      <foreground color="-14079697"/>
+                      <horizontalAlignment value="2"/>
+                      <text value="Restaurantes"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="c1c80" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="73a28" class="javax.swing.JButton">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="250" height="40"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-1"/>
+                      <borderPainted value="false"/>
+                      <focusPainted value="false"/>
+                      <font name=".AppleSystemUIFont" size="14" style="0"/>
+                      <foreground color="-14079697"/>
+                      <horizontalAlignment value="2"/>
+                      <text value="Productos"/>
+                    </properties>
+                  </component>
+                  <hspacer id="3fd8c">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="16" height="-1"/>
+                      </grid>
+                    </constraints>
+                  </hspacer>
+                </children>
+              </grid>
+              <grid id="10152" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="d86f6" class="javax.swing.JButton">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="250" height="40"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-1"/>
+                      <borderPainted value="false"/>
+                      <focusPainted value="false"/>
+                      <font name=".AppleSystemUIFont" size="14" style="1"/>
+                      <foreground color="-5043431"/>
+                      <horizontalAlignment value="2"/>
+                      <text value="&lt;- Cerrar Sesión"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="471e6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="ab830" class="javax.swing.JButton">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="250" height="40"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-1"/>
+                      <borderPainted value="false"/>
+                      <focusPainted value="false"/>
+                      <font name=".AppleSystemUIFont" size="14" style="0"/>
+                      <foreground color="-14079697"/>
+                      <horizontalAlignment value="2"/>
+                      <text value="Órdenes"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <vspacer id="576ce">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+                <preferred-size width="-1" height="64"/>
+              </grid>
+            </constraints>
+          </vspacer>
+        </children>
+      </grid>
+      <scrollpane id="4bf1d" binding="scrollPanel">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <autoscrolls value="false"/>
           <background color="-1"/>
-          <enabled value="false"/>
-          <focusable value="true"/>
-          <horizontalScrollBarPolicy value="32"/>
-          <opaque value="false"/>
-          <visible value="true"/>
         </properties>
         <border type="none"/>
         <children>
@@ -273,10 +457,18 @@
                 <children>
                   <component id="720e7" class="javax.swing.JButton" binding="UpdateButton">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="-1" height="47"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <text value="Update"/>
+                      <background color="-16739212"/>
+                      <borderPainted value="false"/>
+                      <font name=".AppleSystemUIFont" size="14" style="1"/>
+                      <foreground color="-1"/>
+                      <label value="Actualizar"/>
+                      <opaque value="true"/>
+                      <text value="Actualizar"/>
                     </properties>
                   </component>
                 </children>
@@ -293,11 +485,17 @@
                 <children>
                   <component id="2b975" class="javax.swing.JButton" binding="RefreshListButton">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="-1" height="47"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <background color="-1"/>
-                      <text value="Refresh List"/>
+                      <background color="-16734529"/>
+                      <borderPainted value="false"/>
+                      <font name=".AppleSystemUIFont" size="14" style="1"/>
+                      <foreground color="-1"/>
+                      <opaque value="true"/>
+                      <text value="Refrescar lista"/>
                     </properties>
                   </component>
                 </children>
@@ -555,7 +753,7 @@
                   </vspacer>
                 </children>
               </grid>
-              <grid id="9926a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="9926a" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -567,7 +765,23 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="5f6ee" class="javax.swing.JButton" binding="DeleteButton">
+                  <component id="5f6ee" class="javax.swing.JButton" binding="clearButton">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="120" height="47"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-43776"/>
+                      <borderPainted value="false"/>
+                      <contentAreaFilled value="true"/>
+                      <font name=".AppleSystemUIFont" size="14" style="1"/>
+                      <foreground color="-1"/>
+                      <opaque value="true"/>
+                      <text value="Limpiar tabla"/>
+                    </properties>
+                  </component>
+                  <component id="ff918" class="javax.swing.JButton" binding="borrarButton">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="120" height="47"/>
@@ -580,7 +794,7 @@
                       <font name=".AppleSystemUIFont" size="14" style="1"/>
                       <foreground color="-1"/>
                       <opaque value="true"/>
-                      <text value="Delete"/>
+                      <text value="Borrar"/>
                     </properties>
                   </component>
                 </children>
@@ -589,203 +803,13 @@
           </grid>
         </children>
       </scrollpane>
-      <grid id="ee0ac" binding="sideMenu" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
+      <vspacer id="547fd">
         <constraints>
-          <grid row="0" column="0" row-span="4" col-span="1" vsize-policy="3" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="250" height="1016"/>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="64"/>
           </grid>
         </constraints>
-        <properties>
-          <background color="-1"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <grid id="160d5" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="-1" height="64"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-1"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="9577f" class="javax.swing.JLabel" binding="logo">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Label"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="5cc45" layout-manager="GridLayoutManager" row-count="6" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="7a8e4" class="javax.swing.JButton" binding="inicioButton" default-binding="true">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="250" height="40"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                  <borderPainted value="false"/>
-                  <focusPainted value="false"/>
-                  <font name=".AppleSystemUIFont" size="14" style="1"/>
-                  <foreground color="-14584561"/>
-                  <horizontalAlignment value="2"/>
-                  <text value="Inicio"/>
-                </properties>
-              </component>
-              <vspacer id="f9c21">
-                <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                    <preferred-size width="-1" height="800"/>
-                  </grid>
-                </constraints>
-              </vspacer>
-              <grid id="2d2df" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                </properties>
-                <border type="none"/>
-                <children>
-                  <component id="317ed" class="javax.swing.JButton">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                        <preferred-size width="250" height="40"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <background color="-1"/>
-                      <borderPainted value="false"/>
-                      <focusPainted value="false"/>
-                      <font name=".AppleSystemUIFont" size="14" style="0"/>
-                      <foreground color="-14079697"/>
-                      <horizontalAlignment value="2"/>
-                      <text value="Restaurantes"/>
-                    </properties>
-                  </component>
-                </children>
-              </grid>
-              <grid id="c1c80" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
-                <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                </properties>
-                <border type="none"/>
-                <children>
-                  <component id="73a28" class="javax.swing.JButton">
-                    <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                        <preferred-size width="250" height="40"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <background color="-1"/>
-                      <borderPainted value="false"/>
-                      <focusPainted value="false"/>
-                      <font name=".AppleSystemUIFont" size="14" style="0"/>
-                      <foreground color="-14079697"/>
-                      <horizontalAlignment value="2"/>
-                      <text value="Productos"/>
-                    </properties>
-                  </component>
-                  <hspacer id="3fd8c">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="16" height="-1"/>
-                      </grid>
-                    </constraints>
-                  </hspacer>
-                </children>
-              </grid>
-              <grid id="10152" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
-                <constraints>
-                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                </properties>
-                <border type="none"/>
-                <children>
-                  <component id="d86f6" class="javax.swing.JButton">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                        <preferred-size width="250" height="40"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <background color="-1"/>
-                      <borderPainted value="false"/>
-                      <focusPainted value="false"/>
-                      <font name=".AppleSystemUIFont" size="14" style="1"/>
-                      <foreground color="-5043431"/>
-                      <horizontalAlignment value="2"/>
-                      <text value="&lt;- Cerrar Sesión"/>
-                    </properties>
-                  </component>
-                </children>
-              </grid>
-              <grid id="471e6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
-                <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <background color="-1"/>
-                </properties>
-                <border type="none"/>
-                <children>
-                  <component id="ab830" class="javax.swing.JButton">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                        <preferred-size width="250" height="40"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <background color="-1"/>
-                      <borderPainted value="false"/>
-                      <focusPainted value="false"/>
-                      <font name=".AppleSystemUIFont" size="14" style="0"/>
-                      <foreground color="-14079697"/>
-                      <horizontalAlignment value="2"/>
-                      <text value="Órdenes"/>
-                    </properties>
-                  </component>
-                </children>
-              </grid>
-            </children>
-          </grid>
-          <vspacer id="576ce">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-                <preferred-size width="-1" height="64"/>
-              </grid>
-            </constraints>
-          </vspacer>
-        </children>
-      </grid>
+      </vspacer>
     </children>
   </grid>
 </form>
