@@ -22,6 +22,7 @@ public class  Menu extends JFrame {
     private JLabel footerText;
     private JLabel menuWelcomeTitle;
     private JPanel sideMenu;
+    private JScrollPane scrollPanel;
 
 
     public Menu() {
