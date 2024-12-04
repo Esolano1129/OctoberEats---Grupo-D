@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Register extends JFrame {
-    private JPanel RegisterPanel;
+    private JPanel RegisterPanel=null;
     private JLabel FNLabel;
     private JLabel LNLabel;
     private JLabel UsernameLabel;

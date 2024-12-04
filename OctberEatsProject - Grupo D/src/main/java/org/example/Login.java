@@ -37,14 +37,14 @@ public class Login extends JFrame {
             }
         });
 
-        RegisterButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Register newRegister = new Register();
-                newRegister.setVisible(true);
-                dispose();
-            }
-        });
+      RegisterButton.addActionListener(new ActionListener() {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+              Register register = new Register();
+              register.setVisible(true);
+              dispose();
+          }
+      });
 
     }
 
