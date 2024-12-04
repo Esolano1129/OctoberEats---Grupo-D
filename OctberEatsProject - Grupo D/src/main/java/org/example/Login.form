@@ -169,7 +169,7 @@
                       <background color="-1708317"/>
                       <caretColor color="-1708317"/>
                       <font name=".AppleSystemUIFont" size="14" style="0"/>
-                      <margin top="2" left="8" bottom="2" right="6"/>
+                      <margin top="2" left="9" bottom="2" right="6"/>
                     </properties>
                   </component>
                 </children>

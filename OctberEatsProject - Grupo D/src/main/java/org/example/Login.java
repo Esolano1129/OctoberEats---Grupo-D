@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class Login extends JFrame{
+public class Login extends JFrame {
     private JLabel PassLabel;
     private JLabel UsernameLabel;
     private JTextField UsernameTxt;
@@ -20,11 +20,11 @@ public class Login extends JFrame{
     private JPanel centralPanel;
 
 
-    public Login(){
+    public Login() {
         setContentPane(MainPanel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setSize(1920,1080);
+        setSize(1920, 1080);
 
         DBConextion NewConextion = new DBConextion();
         NewConextion.StablishConection();
@@ -32,6 +32,7 @@ public class Login extends JFrame{
         LoginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 validaUsuario(UsernameTxt, PasswordJPassField);
             }
         });
@@ -46,6 +47,7 @@ public class Login extends JFrame{
         });
 
     }
+
     public void validaUsuario(JTextField usernameTxt, JPasswordField PasswordJPassField) {
 
         try {
@@ -79,10 +81,6 @@ public class Login extends JFrame{
             JOptionPane.showMessageDialog(null, "ERROR: " + error.toString());
         }
 
-      }
-
-
-
-
+    }
 
 }
