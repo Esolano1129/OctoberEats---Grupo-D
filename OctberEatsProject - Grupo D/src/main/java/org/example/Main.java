@@ -13,6 +13,9 @@ public class Main {
    login.setVisible(true);
 
 
+   RestaurantV2 rest = new RestaurantV2();
+   rest.setVisible(true);
+
     }
 }
 

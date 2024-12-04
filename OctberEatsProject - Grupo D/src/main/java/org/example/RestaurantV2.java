@@ -120,7 +120,7 @@ public class RestaurantV2 extends JFrame {
                 dispose();
             }
         });
-        clearButton.addActionListener(new ActionListener() {
+      /*  clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TxtRestaurantName.setText("");
@@ -131,7 +131,7 @@ public class RestaurantV2 extends JFrame {
                 TxtPhone.setText("");
                 TxtEmail.setText("");
             }
-        });
+        });*/
 
     }
 
