@@ -23,13 +23,20 @@ public class ProductItemv2 extends JFrame {
     private JTextField TxtDiscount;
     private JLabel ProductNameLabel;
     private JLabel QuantityLabel;
-    private JLabel PriceLabel;
     private JLabel DescriptionLabel;
-    private JLabel DiscountLabel;
     private JPanel ProductPanel;
-    private JLabel RestaurantLabel;
     private JTextField TxtRestaurant;
     private JButton BackButton;
+    private JPanel sideMenu;
+    private JLabel logo;
+    private JButton inicioButton;
+    private JPanel centralPanel;
+    private JLabel PriceLabel;
+    private JLabel DiscountLabel;
+    private JLabel RestaurantLabel;
+    private JLabel titleLabel;
+    private JButton regresarButton;
+    private JScrollPane scrollPanel;
 
 
     public ProductItemv2() {
@@ -77,7 +84,7 @@ public class ProductItemv2 extends JFrame {
             }
         });
 
-        BackButton.addActionListener(new ActionListener() {
+        regresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Menu menu = new Menu();

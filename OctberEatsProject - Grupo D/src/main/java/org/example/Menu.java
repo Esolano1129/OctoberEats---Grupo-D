@@ -32,7 +32,16 @@ public class  Menu extends JFrame {
         setSize(1920, 1080);
 
 
-        menuWelcomeTitle.setText("¡Te damos la bienvenida, " );
+        menuWelcomeTitle.setText("¡Te damos la bienvenida!" );
+
+        productsBttn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ProductItemv2 productItemv2 = new ProductItemv2();
+                productItemv2.setVisible(true);
+                dispose();
+            }
+        });
 
 
         restaurantsButton.addActionListener(new ActionListener() {
