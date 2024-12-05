@@ -21,6 +21,12 @@ public class Login extends JFrame {
 
 
     public Login() {
+
+        if (MainPanel == null) {
+            MainPanel = new JPanel();
+
+        }
+
         setContentPane(MainPanel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
