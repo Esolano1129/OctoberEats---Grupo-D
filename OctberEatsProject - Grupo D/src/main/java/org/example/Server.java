@@ -24,6 +24,9 @@ public class Server {
         }
     }
 
+
+    /4
+
     private static void manejarCliente(Socket socket) {
         try (
                 ObjectInputStream entrada = new ObjectInputStream(socket.getInputStream());
