@@ -294,7 +294,7 @@
                       <text value="OrdersImg"/>
                     </properties>
                   </component>
-                  <component id="51c76" class="javax.swing.JButton" binding="órdenesButton" default-binding="true">
+                  <component id="51c76" class="javax.swing.JButton" binding="ordersButton">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="72" height="72"/>
@@ -360,6 +360,7 @@
                     </constraints>
                     <properties>
                       <font name=".AppleSystemUIFont" size="24" style="1"/>
+                      <labelFor value="4f744"/>
                       <text value="¡Te damos la Bienvenida, !"/>
                     </properties>
                   </component>

@@ -22,12 +22,28 @@ public class Order extends JFrame {
     private JButton updateOrderButton;
     private JPanel MainPanel;
     private JTable DataJTable;
+    private JPanel sideMenu;
+    private JLabel logo;
+    private JButton inicioButton;
+    private JPanel orderPanel;
+    private JPanel centralPanel;
+    private JLabel restTitle;
+    private JButton regresarButton;
 
     public Order() {
-        setContentPane(MainPanel);
+        setContentPane(orderPanel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setSize(1920, 1080);
+
+        regresarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Menu menu = new Menu();
+                menu.setVisible(true);
+                dispose();
+            }
+        });
 
         Createbutton.addActionListener(new ActionListener() {
             @Override

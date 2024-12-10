@@ -11,7 +11,7 @@ public class  Menu extends JFrame {
     private JButton usuariosButton;
     private JPanel MenuPanel;
     private JPanel centralPanel;
-    private JButton órdenesButton;
+    private JButton ordersButton;
     private JLabel logo;
     private JButton inicioButton;
     private JButton restaurantesBttn;
@@ -39,6 +39,15 @@ public class  Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 ProductItemv2 productItemv2 = new ProductItemv2();
                 productItemv2.setVisible(true);
+                dispose();
+            }
+        });
+
+        ordersButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Order order = new Order();
+                order.setVisible(true);
                 dispose();
             }
         });
