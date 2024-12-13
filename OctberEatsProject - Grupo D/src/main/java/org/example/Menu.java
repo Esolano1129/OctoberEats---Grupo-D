@@ -8,13 +8,10 @@ public class  Menu extends JFrame {
 
     private JButton restaurantsButton;
     private JButton productsButton;
-    private JButton usuariosButton;
     private JPanel MenuPanel;
-    private JPanel centralPanel;
     private JButton ordersButton;
-    private JLabel logo;
-    private JButton inicioButton;
-    private JButton restaurantesBttn;
+    private JButton inicioMenu;
+    private JButton restaurantsMenu;
     private JPanel restBttnPanel;
     private JButton productsBttn;
     private JPanel productsBttnPanel;
@@ -22,7 +19,11 @@ public class  Menu extends JFrame {
     private JLabel footerText;
     private JLabel menuWelcomeTitle;
     private JPanel sideMenu;
-    private JScrollPane scrollPanel;
+    private JLabel logo;
+    private JPanel newCentralPanel;
+    private JButton usuariosButton;
+    private JButton ordersMenu;
+    private JButton productosMenu;
 
 
     public Menu() {
@@ -34,7 +35,44 @@ public class  Menu extends JFrame {
 
         menuWelcomeTitle.setText("¡Te damos la bienvenida!" );
 
-        productsBttn.addActionListener(new ActionListener() {
+        restaurantsMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RestaurantV2 restaurantV2 = new RestaurantV2();
+                restaurantV2.setVisible(true);
+                dispose();
+            }
+        });
+
+        productosMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ProductItemv2 productItemv2 = new ProductItemv2();
+                productItemv2.setVisible(true);
+                dispose();
+            }
+        });
+
+        ordersMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Order order = new Order();
+                order.setVisible(true);
+                dispose();
+            }
+        });
+
+        usuariosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                User user = new User();
+                user.setVisible(true);
+                dispose();
+            }
+        });
+
+
+        productsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ProductItemv2 productItemv2 = new ProductItemv2();

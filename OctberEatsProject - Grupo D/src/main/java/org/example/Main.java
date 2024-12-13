@@ -12,9 +12,10 @@ public class Main {
         }).start();
 
    Login login = new Login();
-   login.setVisible(true);
-    }
-    ;
+   login.setVisible(true);  
+    };
+
+
 
 }
 

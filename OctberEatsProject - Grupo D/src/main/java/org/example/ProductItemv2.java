@@ -45,6 +45,8 @@ public class ProductItemv2 extends JFrame {
         setLocationRelativeTo(null);
         setSize(1920, 1080);
 
+        createButton.setText("Añadir producto");
+
         createButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
