@@ -31,6 +31,11 @@ public class User extends JFrame {
     private JButton RefreshListButton;
     private JButton UpdateButton;
     private JButton DeleteButton;
+    private JPanel sideMenu;
+    private JLabel logo;
+    private JButton inicioButton;
+    private JPanel centralPanel;
+    private JButton editOrderButton;
 
 
     public User() {
