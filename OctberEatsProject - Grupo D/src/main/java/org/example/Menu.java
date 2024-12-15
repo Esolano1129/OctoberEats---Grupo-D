@@ -24,6 +24,7 @@ public class  Menu extends JFrame {
     private JButton usuariosButton;
     private JButton ordersMenu;
     private JButton productosMenu;
+    private JButton usersMenu;
 
 
     public Menu() {
@@ -40,6 +41,15 @@ public class  Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 RestaurantV2 restaurantV2 = new RestaurantV2();
                 restaurantV2.setVisible(true);
+                dispose();
+            }
+        });
+
+        usersMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                User user = new User();
+                user.setVisible(true);
                 dispose();
             }
         });

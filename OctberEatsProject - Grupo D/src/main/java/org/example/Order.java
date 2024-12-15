@@ -24,11 +24,15 @@ public class Order extends JFrame {
     private JTable DataJTable;
     private JPanel sideMenu;
     private JLabel logo;
-    private JButton inicioButton;
+    private JButton inicioMenu;
     private JPanel orderPanel;
+    private JButton regresarButton;
+    private JButton ordersMenu;
+    private JButton restaurantsMenu;
+    private JButton productosMenu;
+    private JButton usersMenu;
     private JPanel centralPanel;
     private JLabel restTitle;
-    private JButton regresarButton;
 
     public Order() {
         setContentPane(orderPanel);
@@ -44,6 +48,52 @@ public class Order extends JFrame {
                 dispose();
             }
         });
+
+        inicioMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Menu menu = new Menu();
+                menu.setVisible(true);
+                dispose();
+            }
+        });
+
+        restaurantsMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RestaurantV2 restaurantV2 = new RestaurantV2();
+                restaurantV2.setVisible(true);
+                dispose();
+            }
+        });
+
+        productosMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ProductItemv2 productItemv2 = new ProductItemv2();
+                productItemv2.setVisible(true);
+                dispose();
+            }
+        });
+
+        usersMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                User user = new User();
+                user.setVisible(true);
+                dispose();
+            }
+        });
+
+        ordersMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Order order = new Order();
+                order.setVisible(true);
+                dispose();
+            }
+        });
+
 
         Createbutton.addActionListener(new ActionListener() {
             @Override

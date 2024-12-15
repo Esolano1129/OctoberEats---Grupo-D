@@ -20,8 +20,6 @@ public class User extends JFrame {
     private JTextField TxtPhone;
     private JTextField TxtEmail;
     private JButton changePasswordButton;
-    private JButton createOrderButton;
-    private JButton trackOrderButton;
     private JButton updateUserButton;
     private JPanel MainPanel;
     private JButton regresarButton;
@@ -29,13 +27,16 @@ public class User extends JFrame {
     private JScrollPane scrollPanel;
     private JButton clearButton;
     private JButton RefreshListButton;
-    private JButton UpdateButton;
     private JButton DeleteButton;
     private JPanel sideMenu;
     private JLabel logo;
-    private JButton inicioButton;
+    private JButton inicioMenu;
+    private JButton ordersMenu;
+    private JButton restaurantsMenu;
+    private JButton productosMenu;
+    private JButton usersMenu;
     private JPanel centralPanel;
-    private JButton editOrderButton;
+    private JLabel userTitle;
 
 
     public User() {
@@ -58,6 +59,61 @@ public class User extends JFrame {
                 TxtEmail.setText("");
             }
         });
+
+        regresarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Menu menu = new Menu();
+                menu.setVisible(true);
+                dispose();
+            }
+        });
+
+        restaurantsMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RestaurantV2 restaurantV2 = new RestaurantV2();
+                restaurantV2.setVisible(true);
+                dispose();
+            }
+        });
+
+        inicioMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Menu menu = new Menu();
+                menu.setVisible(true);
+                dispose();
+            }
+        });
+
+        usersMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                User user = new User();
+                user.setVisible(true);
+                dispose();
+            }
+        });
+
+        productosMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ProductItemv2 productItemv2 = new ProductItemv2();
+                productItemv2.setVisible(true);
+                dispose();
+            }
+        });
+
+        ordersMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Order order = new Order();
+                order.setVisible(true);
+                dispose();
+            }
+        });
+
         RefreshListButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -68,25 +124,6 @@ public class User extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 changePassword();
-            }
-        });
-        UpdateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                updateUser();
-            }
-        });
-        createOrderButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                createOrder();
-            }
-        });
-
-        trackOrderButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                trackOrder();
             }
         });
 

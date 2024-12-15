@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="orderPanel" layout-manager="GridLayoutManager" row-count="3" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="742" height="1176"/>
+      <xy x="20" y="20" width="781" height="1176"/>
     </constraints>
     <properties>
       <background color="-1708317"/>
@@ -55,7 +55,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="af15d" class="javax.swing.JButton" binding="inicioButton" default-binding="true">
+              <component id="af15d" class="javax.swing.JButton" binding="inicioMenu">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
                     <preferred-size width="250" height="40"/>
@@ -65,8 +65,8 @@
                   <background color="-1"/>
                   <borderPainted value="false"/>
                   <focusPainted value="false"/>
-                  <font name=".AppleSystemUIFont" size="14" style="1"/>
-                  <foreground color="-14584561"/>
+                  <font name=".AppleSystemUIFont" size="14" style="0"/>
+                  <foreground color="-14079697"/>
                   <horizontalAlignment value="2"/>
                   <text value="Inicio"/>
                 </properties>
@@ -88,7 +88,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="48e2f" class="javax.swing.JButton">
+                  <component id="48e2f" class="javax.swing.JButton" binding="restaurantsMenu">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="250" height="40"/>
@@ -116,7 +116,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="2e43a" class="javax.swing.JButton">
+                  <component id="2e43a" class="javax.swing.JButton" binding="productosMenu">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="250" height="40"/>
@@ -172,7 +172,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="792ad" class="javax.swing.JButton">
+                  <component id="792ad" class="javax.swing.JButton" binding="ordersMenu">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="250" height="40"/>
@@ -182,8 +182,8 @@
                       <background color="-1"/>
                       <borderPainted value="false"/>
                       <focusPainted value="false"/>
-                      <font name=".AppleSystemUIFont" size="14" style="0"/>
-                      <foreground color="-14079697"/>
+                      <font name=".AppleSystemUIFont" size="14" style="1"/>
+                      <foreground color="-14584561"/>
                       <horizontalAlignment value="2"/>
                       <text value="Órdenes"/>
                     </properties>
@@ -200,7 +200,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="76496" class="javax.swing.JButton">
+                  <component id="76496" class="javax.swing.JButton" binding="usersMenu">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="250" height="40"/>
@@ -271,7 +271,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="6a86b" binding="centralPanel" layout-manager="GridLayoutManager" row-count="16" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="684d8" binding="centralPanel" layout-manager="GridLayoutManager" row-count="16" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="40" left="40" bottom="40" right="40"/>
             <constraints/>
             <properties>
@@ -279,7 +279,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="2ebe5" class="javax.swing.JLabel" binding="restTitle">
+              <component id="6652b" class="javax.swing.JLabel" binding="restTitle">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -288,7 +288,7 @@
                   <text value="Órdenes"/>
                 </properties>
               </component>
-              <component id="20bbf" class="javax.swing.JButton" binding="regresarButton" default-binding="true">
+              <component id="dedb9" class="javax.swing.JButton" binding="regresarButton" default-binding="true">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -300,21 +300,21 @@
                   <text value="&lt;- Regresar"/>
                 </properties>
               </component>
-              <vspacer id="23789">
+              <vspacer id="849c3">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <preferred-size width="-1" height="16"/>
                   </grid>
                 </constraints>
               </vspacer>
-              <vspacer id="217a8">
+              <vspacer id="990ff">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <preferred-size width="-1" height="16"/>
                   </grid>
                 </constraints>
               </vspacer>
-              <grid id="9a474" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="76e30" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="9" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -324,7 +324,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="49604" class="javax.swing.JButton" binding="Createbutton">
+                  <component id="9770" class="javax.swing.JButton" binding="Createbutton">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="-1" height="47"/>
@@ -345,7 +345,7 @@
                   </component>
                 </children>
               </grid>
-              <grid id="7f47f" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="eb079" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -357,7 +357,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="4fcd2" class="javax.swing.JLabel">
+                  <component id="b9ee1" class="javax.swing.JLabel">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -366,7 +366,7 @@
                       <text value="Número de orden"/>
                     </properties>
                   </component>
-                  <grid id="6dfbd" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="eb223" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -376,7 +376,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="4f148" class="javax.swing.JTextField" binding="TxtOrderNumber">
+                      <component id="43398" class="javax.swing.JTextField" binding="TxtOrderNumber">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="47"/>
@@ -384,13 +384,14 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
                   </grid>
                 </children>
               </grid>
-              <grid id="86faf" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="ebbf6" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -402,7 +403,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="9ace8" class="javax.swing.JLabel">
+                  <component id="b51c0" class="javax.swing.JLabel">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -411,7 +412,7 @@
                       <text value="Hora"/>
                     </properties>
                   </component>
-                  <grid id="f3cd" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="9b552" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -421,7 +422,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="78405" class="javax.swing.JTextField" binding="TxtTime">
+                      <component id="dd189" class="javax.swing.JTextField" binding="TxtTime">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="47"/>
@@ -429,13 +430,14 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
                   </grid>
                 </children>
               </grid>
-              <grid id="4b722" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="d0bfa" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -447,7 +449,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="730a" class="javax.swing.JLabel">
+                  <component id="6337c" class="javax.swing.JLabel">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -456,7 +458,7 @@
                       <text value="Usuario"/>
                     </properties>
                   </component>
-                  <grid id="bccb" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="f437e" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -466,7 +468,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="a2b9b" class="javax.swing.JTextField" binding="TxtUser">
+                      <component id="3bd70" class="javax.swing.JTextField" binding="TxtUser">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="47"/>
@@ -474,13 +476,14 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
                   </grid>
                 </children>
               </grid>
-              <grid id="5d74" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="c8008" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -492,7 +495,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="17c8a" class="javax.swing.JLabel">
+                  <component id="57fdb" class="javax.swing.JLabel">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -501,7 +504,7 @@
                       <text value="Identificación"/>
                     </properties>
                   </component>
-                  <grid id="f21f4" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="aa355" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -511,7 +514,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="a4726" class="javax.swing.JTextField" binding="IdTxt">
+                      <component id="b32ce" class="javax.swing.JTextField" binding="IdTxt">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="47"/>
@@ -519,13 +522,14 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
                   </grid>
                 </children>
               </grid>
-              <grid id="c70d1" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="9fad" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -537,7 +541,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="ff562" class="javax.swing.JLabel">
+                  <component id="a58c" class="javax.swing.JLabel">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -546,7 +550,7 @@
                       <text value="Día"/>
                     </properties>
                   </component>
-                  <grid id="17eba" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="7e00f" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -556,7 +560,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="b093e" class="javax.swing.JTextField" binding="TxtDate">
+                      <component id="5bfd3" class="javax.swing.JTextField" binding="TxtDate">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="47"/>
@@ -564,6 +568,7 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                           <text value=""/>
                         </properties>
                       </component>
@@ -571,7 +576,7 @@
                   </grid>
                 </children>
               </grid>
-              <grid id="303cc" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="7b283" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -583,7 +588,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="d18d9" class="javax.swing.JLabel">
+                  <component id="4141b" class="javax.swing.JLabel">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -592,7 +597,7 @@
                       <text value="Hora de entrega"/>
                     </properties>
                   </component>
-                  <grid id="91e1c" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="46552" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -602,7 +607,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="40d16" class="javax.swing.JTextField" binding="TxtDeliveryTime">
+                      <component id="b42a2" class="javax.swing.JTextField" binding="TxtDeliveryTime">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="47"/>
@@ -610,13 +615,14 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
                   </grid>
                 </children>
               </grid>
-              <grid id="f5197" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="36605" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -628,7 +634,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="9d3f8" class="javax.swing.JLabel">
+                  <component id="ab1d4" class="javax.swing.JLabel">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -637,7 +643,7 @@
                       <text value="Producto"/>
                     </properties>
                   </component>
-                  <grid id="46ee6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="68d88" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -647,7 +653,7 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="3e2a8" class="javax.swing.JTextField" binding="TxtProductItem">
+                      <component id="56da8" class="javax.swing.JTextField" binding="TxtProductItem">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="47"/>
@@ -655,13 +661,14 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
                   </grid>
                 </children>
               </grid>
-              <component id="2a3a7" class="javax.swing.JTable" binding="DataJTable">
+              <component id="8835f" class="javax.swing.JTable" binding="DataJTable">
                 <constraints>
                   <grid row="15" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="200"/>
@@ -669,21 +676,21 @@
                 </constraints>
                 <properties/>
               </component>
-              <vspacer id="c0a96">
+              <vspacer id="c98d3">
                 <constraints>
                   <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <preferred-size width="-1" height="24"/>
                   </grid>
                 </constraints>
               </vspacer>
-              <vspacer id="bd54">
+              <vspacer id="6a6b6">
                 <constraints>
                   <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <preferred-size width="-1" height="24"/>
                   </grid>
                 </constraints>
               </vspacer>
-              <grid id="75d3b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="64428" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -693,7 +700,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="a8cc4" class="javax.swing.JButton" binding="deleteOrderButton">
+                  <component id="5b5d" class="javax.swing.JButton" binding="deleteOrderButton">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="120" height="47"/>
@@ -711,7 +718,7 @@
                   </component>
                 </children>
               </grid>
-              <grid id="f72d1" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="e7e52" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -721,7 +728,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="49ea1" class="javax.swing.JButton" binding="editOrderButton">
+                  <component id="455fc" class="javax.swing.JButton" binding="editOrderButton">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="-1" height="47"/>
@@ -738,7 +745,7 @@
                   </component>
                 </children>
               </grid>
-              <grid id="66625" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="40410" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="13" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -748,7 +755,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="2e08b" class="javax.swing.JButton" binding="updateOrderButton">
+                  <component id="9328a" class="javax.swing.JButton" binding="updateOrderButton">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="-1" height="47"/>
@@ -766,7 +773,7 @@
                   </component>
                 </children>
               </grid>
-              <grid id="29b45" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="a6b56" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -776,7 +783,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="d7b8f" class="javax.swing.JButton" binding="addNewItemsButton">
+                  <component id="c25e7" class="javax.swing.JButton" binding="addNewItemsButton">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="-1" height="47"/>
@@ -793,7 +800,7 @@
                   </component>
                 </children>
               </grid>
-              <grid id="749eb" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="2764b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="11" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -804,7 +811,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="f6829" class="javax.swing.JButton" binding="trackOrderButton">
+                  <component id="61bae" class="javax.swing.JButton" binding="trackOrderButton">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="-1" height="47"/>
@@ -821,7 +828,7 @@
                   </component>
                 </children>
               </grid>
-              <vspacer id="4f906">
+              <vspacer id="c31dd">
                 <constraints>
                   <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                     <preferred-size width="-1" height="24"/>

@@ -83,7 +83,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="eb4c2" class="javax.swing.JButton" binding="inicioButton" default-binding="true">
+              <component id="eb4c2" class="javax.swing.JButton" binding="inicioMenu">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
                     <preferred-size width="250" height="40"/>
@@ -93,8 +93,8 @@
                   <background color="-1"/>
                   <borderPainted value="false"/>
                   <focusPainted value="false"/>
-                  <font name=".AppleSystemUIFont" size="14" style="1"/>
-                  <foreground color="-14584561"/>
+                  <font name=".AppleSystemUIFont" size="14" style="0"/>
+                  <foreground color="-14079697"/>
                   <horizontalAlignment value="2"/>
                   <text value="Inicio"/>
                 </properties>
@@ -116,7 +116,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="cb54" class="javax.swing.JButton">
+                  <component id="cb54" class="javax.swing.JButton" binding="restaurantsMenu">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="250" height="40"/>
@@ -144,7 +144,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="b1c08" class="javax.swing.JButton">
+                  <component id="b1c08" class="javax.swing.JButton" binding="productosMenu">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="250" height="40"/>
@@ -154,8 +154,8 @@
                       <background color="-1"/>
                       <borderPainted value="false"/>
                       <focusPainted value="false"/>
-                      <font name=".AppleSystemUIFont" size="14" style="0"/>
-                      <foreground color="-14079697"/>
+                      <font name=".AppleSystemUIFont" size="14" style="1"/>
+                      <foreground color="-14584561"/>
                       <horizontalAlignment value="2"/>
                       <text value="Productos"/>
                     </properties>
@@ -200,7 +200,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="549b8" class="javax.swing.JButton">
+                  <component id="549b8" class="javax.swing.JButton" binding="ordersMenu">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="250" height="40"/>
@@ -228,7 +228,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="a54f7" class="javax.swing.JButton">
+                  <component id="a54f7" class="javax.swing.JButton" binding="usersMenu">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="250" height="40"/>
@@ -330,6 +330,7 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
@@ -373,6 +374,7 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
@@ -416,6 +418,7 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
@@ -459,6 +462,7 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
@@ -502,6 +506,7 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
@@ -545,6 +550,7 @@
                         </constraints>
                         <properties>
                           <background color="-1708317"/>
+                          <font name=".AppleSystemUIFont" size="14" style="0"/>
                         </properties>
                       </component>
                     </children>
@@ -567,6 +573,7 @@
                         </constraints>
                         <properties>
                           <autoResizeMode value="0"/>
+                          <background color="-1"/>
                         </properties>
                       </component>
                       <vspacer id="a6a2d">

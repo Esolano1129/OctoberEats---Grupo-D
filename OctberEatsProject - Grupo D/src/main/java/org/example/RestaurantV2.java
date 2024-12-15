@@ -16,10 +16,6 @@ import java.sql.SQLException;
 public class RestaurantV2 extends JFrame {
 
 
-    private JLabel RestNameLabel;
-    private JLabel AddressLabel;
-    private JLabel ScheduleLabel;
-    private JLabel RatingLabel;
     private JTextField TxtRestaurantName;
     private JTextField TxtAddress;
     private JTextField TxtSchedule;
@@ -31,21 +27,27 @@ public class RestaurantV2 extends JFrame {
     private JButton borrarButton;
     private JButton UpdateButton;
     private JPanel RestPanel;
-    private JLabel footerText;
-    private JPanel footer;
-    private JPanel centralPanel;
     private JButton RefreshListButton;
-    private JLabel CategoryLabel;
-    private JLabel PhoneLabel;
-    private JLabel EmailLabel;
-    private JLabel restTitle;
     private JButton regresarButton;
     private JTable DataJTable;
     private JPanel sideMenu;
     private JLabel logo;
-    private JButton inicioButton;
+    private JButton inicioMenu;
     private JScrollPane scrollPanel;
     private JButton clearButton;
+    private JButton ordersMenu;
+    private JButton restaurantsMenu;
+    private JButton productosMenu;
+    private JButton usersMenu;
+    private JPanel centralPanel;
+    private JLabel ScheduleLabel;
+    private JLabel AddressLabel;
+    private JLabel RestNameLabel;
+    private JLabel RatingLabel;
+    private JLabel CategoryLabel;
+    private JLabel PhoneLabel;
+    private JLabel EmailLabel;
+    private JLabel restTitle;
 
 
     public RestaurantV2() {
@@ -92,6 +94,43 @@ public class RestaurantV2 extends JFrame {
                 }.execute();  //Ejecuta el swingworker
             }
         });
+
+        inicioMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Menu menu = new Menu();
+                menu.setVisible(true);
+                dispose();
+            }
+        });
+
+        usersMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                User user = new User();
+                user.setVisible(true);
+                dispose();
+            }
+        });
+
+        productosMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ProductItemv2 productItemv2 = new ProductItemv2();
+                productItemv2.setVisible(true);
+                dispose();
+            }
+        });
+
+        ordersMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Order order = new Order();
+                order.setVisible(true);
+                dispose();
+            }
+        });
+
         RefreshListButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
