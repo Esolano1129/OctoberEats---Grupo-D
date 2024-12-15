@@ -197,7 +197,7 @@ public class RestaurantV2 extends JFrame {
         String query = "INSERT INTO OctoberEatsDB.Restaurants(RestaurantName, Address, RestaurantSchedule, Rating, Category, Phone, Email) VALUES(?,?,?,?,?,?,?);";
 
         try {
-            DBConextion db = new DBConextion();
+            org.example.DBConextion db = new org.example.DBConextion();
             Connection conn = db.StablishConection();
 
             if (conn != null) {
@@ -225,12 +225,12 @@ public class RestaurantV2 extends JFrame {
 
     public void RefreshTable() {
         String sql = "SELECT * FROM OctoberEatsDB.Restaurants;";
-        DBConextion con = null;
+        org.example.DBConextion con = null;
         ResultSet resultado = null;
 
         try {
 
-            con = new DBConextion();
+            con = new org.example.DBConextion();
             resultado = con.getResult(sql);
 
             DefaultTableModel md = new DefaultTableModel();
@@ -283,10 +283,10 @@ public class RestaurantV2 extends JFrame {
         }
 
         String sql = "DELETE FROM OctoberEatsDB.Restaurants WHERE Id = ?";
-        DBConextion con = null;
+        org.example.DBConextion con = null;
 
         try {
-            con = new DBConextion();
+            con = new org.example.DBConextion();
             Connection connection = con.StablishConection();
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
@@ -330,10 +330,10 @@ public class RestaurantV2 extends JFrame {
         String email = TxtEmail.getText();
 
         String sql = "UPDATE OctoberEatsDB.Restaurants SET RestaurantName = ?, Address = ?, RestaurantSchedule = ?, Rating = ?, Category = ?, Phone = ?, Email = ? WHERE Id = ?";
-        DBConextion con = null;
+        org.example.DBConextion con = null;
 
         try {
-            con = new DBConextion();
+            con = new org.example.DBConextion();
             Connection connection = con.StablishConection();
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, name);
@@ -371,7 +371,7 @@ public class RestaurantV2 extends JFrame {
         }
     }
     private Object enviarSolicitud(String operacion, Object datos) {
-        try (Socket socket = new Socket("127.0.0.1", 5432);
+        try (Socket socket = new Socket("127.0.0.1", 5433);
              ObjectOutputStream salida = new ObjectOutputStream(socket.getOutputStream());
              ObjectInputStream entrada = new ObjectInputStream(socket.getInputStream())) {
 
