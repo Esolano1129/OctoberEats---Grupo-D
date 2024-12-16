@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.Controller.RestaurantV2;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
