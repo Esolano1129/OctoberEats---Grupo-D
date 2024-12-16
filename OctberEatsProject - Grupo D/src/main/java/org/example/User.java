@@ -38,107 +38,50 @@ public class User extends JFrame {
     private JPanel centralPanel;
     private JLabel userTitle;
 
-
     public User() {
         setContentPane(MainPanel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setSize(1920, 1080);
 
-        clearButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                TxtID.setText("");
-                TxtUsername.setText("");
-                TxtPassword.setText("");
-                TxtFirstname.setText("");
-                TxtLastName.setText("");
-                TxtAddress.setText("");
-                TxtAge.setText("");
-                TxtPhone.setText("");
-                TxtEmail.setText("");
-            }
-        });
+        clearButton.addActionListener(e -> clearFields());
 
-        regresarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Menu menu = new Menu();
-                menu.setVisible(true);
-                dispose();
-            }
-        });
+        regresarButton.addActionListener(e -> navigateTo(new Menu()));
 
-        restaurantsMenu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                RestaurantV2 restaurantV2 = new RestaurantV2();
-                restaurantV2.setVisible(true);
-                dispose();
-            }
-        });
+        restaurantsMenu.addActionListener(e -> navigateTo(new RestaurantV2()));
 
-        inicioMenu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Menu menu = new Menu();
-                menu.setVisible(true);
-                dispose();
-            }
-        });
+        inicioMenu.addActionListener(e -> navigateTo(new Menu()));
 
-        usersMenu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                User user = new User();
-                user.setVisible(true);
-                dispose();
-            }
-        });
+        usersMenu.addActionListener(e -> navigateTo(new User()));
 
-        productosMenu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ProductItemv2 productItemv2 = new ProductItemv2();
-                productItemv2.setVisible(true);
-                dispose();
-            }
-        });
+        productosMenu.addActionListener(e -> navigateTo(new ProductItemv2()));
 
-        ordersMenu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Order order = new Order();
-                order.setVisible(true);
-                dispose();
-            }
-        });
+        ordersMenu.addActionListener(e -> navigateTo(new Order()));
 
-        RefreshListButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                RefreshTable();
-            }
-        });
-        changePasswordButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                changePassword();
-            }
-        });
+        RefreshListButton.addActionListener(e -> refreshTable());
 
-        updateUserButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                updateUser();
-            }
-        });
-        DeleteButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                DeleteUser();
-            }
-        });
+        changePasswordButton.addActionListener(e -> changePassword());
+
+        updateUserButton.addActionListener(e -> updateUser());
+
+        DeleteButton.addActionListener(e -> deleteUser());
+    }
+
+    private void clearFields() {
+        TxtID.setText("");
+        TxtUsername.setText("");
+        TxtPassword.setText("");
+        TxtFirstname.setText("");
+        TxtLastName.setText("");
+        TxtAddress.setText("");
+        TxtAge.setText("");
+        TxtPhone.setText("");
+        TxtEmail.setText("");
+    }
+
+    private void navigateTo(JFrame frame) {
+        frame.setVisible(true);
+        dispose();
     }
 
     private void changePassword() {
@@ -163,61 +106,21 @@ public class User extends JFrame {
         }
     }
 
-    private void createOrder() {
-        //Crea una orden y pasa a la ventana de Order
-        Order orderWindow = new Order();
-        orderWindow.setVisible(true);
-        dispose() ;
-
-
-
-        /*  try {
-            JOptionPane.showMessageDialog(null, "Order Created!");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "ERROR: " + e.toString());
-        }*/
-    }
-
-    private void trackOrder() {
-        //Le da seguimiento a una orden y pasa a la ventana de Order
-        Order orderWindow = new Order();
-        orderWindow.setVisible(true);
-        dispose();
-        // Lógica para rastrear orden
-        /* try {
-
-            JOptionPane.showMessageDialog(null, "Tracking Order...");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "ERROR: " + e.toString());
-        }*/
-    }
-
     private void updateUser() {
         int selectedRow = DataJTable.getSelectedRow();
 
         if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(null, "Por favor, seleccione una fila para actualizar.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a row to update.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         DefaultTableModel model = (DefaultTableModel) DataJTable.getModel();
         int id = (int) model.getValueAt(selectedRow, 0);
 
-        String UserName = TxtUsername.getText();
-        String Password = TxtPassword.getText();;
-        String FirstName = TxtFirstname.getText();
-        String LastName =  TxtLastName.getText();
-        String phone = TxtPhone.getText();
-        String email = TxtEmail.getText();
-        int age = Integer.parseInt(TxtAge.getText());
-        String address = TxtAddress.getText();
-
-        String sql = "UPDATE OctoberEatsDB.Usersv2 SET UserName = ?, Password = ?, Firstname = ?, LastName = ?, Phone = ?, email = ?, Address = ?, Age = ? WHERE ID = ?";
-        DBConextion con = null;
-
+        String sql = "UPDATE OctoberEatsDB.Usersv2 SET Usernames = ?, Passwords = ?, Firstname = ?, LastName = ?, Phone = ?, Email = ?, Address = ?, Age = ? WHERE ID = ?";
         try {
-            con = new DBConextion();
-            Connection connection = con.StablishConection();
+            DBConextion db = new DBConextion();
+            Connection connection = db.StablishConection();
             PreparedStatement stmt = connection.prepareStatement(sql);
 
             stmt.setString(1, TxtUsername.getText());
@@ -226,119 +129,84 @@ public class User extends JFrame {
             stmt.setString(4, TxtLastName.getText());
             stmt.setString(5, TxtPhone.getText());
             stmt.setString(6, TxtEmail.getText());
-            stmt.setInt(7, Integer.parseInt(TxtAge.getText()));
-            stmt.setString(8, TxtAddress.getText());
+            stmt.setString(7, TxtAddress.getText());
+            stmt.setInt(8, Integer.parseInt(TxtAge.getText()));
+            stmt.setInt(9, id);
+
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-                model.setValueAt(UserName, selectedRow, 1);
-                model.setValueAt(Password, selectedRow, 2);
-                model.setValueAt(FirstName, selectedRow, 3);
-                model.setValueAt(LastName, selectedRow, 4);
-                model.setValueAt(phone, selectedRow, 5);
-                model.setValueAt(email, selectedRow, 6);
-                model.setValueAt(email, selectedRow, 7);
-                model.setValueAt(address, selectedRow, 8);
-
-                JOptionPane.showMessageDialog(null, "Fila actualizada correctamente");
+                JOptionPane.showMessageDialog(null, "User updated successfully.");
+                refreshTable();
             } else {
-                JOptionPane.showMessageDialog(null, "No se pudo actualizar la fila.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Update failed.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error al actualizar la fila en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            if (con != null) {
-                con.close();
-            }
+            JOptionPane.showMessageDialog(null, "Error updating user: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-
-
-
     }
-    public void RefreshTable() {
-        String sql = "SELECT * FROM OctoberEatsDB.Users;";
-        DBConextion con = null;
-        ResultSet resultado = null;
+
+    private void refreshTable() {
+        String sql = "SELECT * FROM OctoberEatsDB.Usersv2;";
 
         try {
+            DBConextion db = new DBConextion();
+            ResultSet resultSet = db.getResult(sql);
 
-            con = new DBConextion();
-            resultado = con.getResult(sql);
+            DefaultTableModel model = new DefaultTableModel();
+            model.setColumnIdentifiers(new Object[]{"Id", "Username", "FirstName", "LastName", "Phone", "Email", "Address", "Age"});
 
-            DefaultTableModel md = new DefaultTableModel();
-            md.setColumnIdentifiers(new Object[]{"UserName", "Password", "Firstname", "LastName", "Phone", "email", "Address", "Age"});
-
-            while (resultado.next()) {
-                md.addRow(new Object[]{
-                        resultado.getInt("UserName"),
-                        resultado.getString("Firstname"),
-                        resultado.getString("LastName"),
-                        resultado.getString("Phone"),
-                        resultado.getString("email"),
-                        resultado.getString("Address"),
-                        resultado.getString("Age"),
-
+            while (resultSet.next()) {
+                model.addRow(new Object[]{
+                        resultSet.getInt("Id"),
+                        resultSet.getString("Usernames"),
+                        resultSet.getString("Firstname"),
+                        resultSet.getString("LastName"),
+                        resultSet.getString("Phone"),
+                        resultSet.getString("Email"),
+                        resultSet.getString("Address"),
+                        resultSet.getInt("Age")
                 });
             }
-            DataJTable.setModel(md);
 
+            DataJTable.setModel(model);
         } catch (SQLException e) {
-            System.err.println("Error al refrescar la tabla: " + e.getMessage());
-            e.printStackTrace();
-        } finally {
-
-            try {
-                if (resultado != null) resultado.close();
-                if (con != null) con.close();
-            } catch (SQLException e) {
-                System.err.println("Error al cerrar recursos: " + e.getMessage());
-            }
+            JOptionPane.showMessageDialog(null, "Error loading user data: " + e.getMessage());
         }
     }
-    public void DeleteUser() {
 
+    private void deleteUser() {
         int selectedRow = DataJTable.getSelectedRow();
 
         if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(null, "Por favor, selecciona una fila para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a row to delete.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         DefaultTableModel model = (DefaultTableModel) DataJTable.getModel();
         int id = (int) model.getValueAt(selectedRow, 0);
 
-
-        int confirm = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas eliminar esta fila?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
+        int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this user?", "Confirm Deletion", JOptionPane.YES_NO_OPTION);
         if (confirm != JOptionPane.YES_OPTION) {
             return;
         }
 
-        String sql = "DELETE FROM OctoberEatsDB.Userv2 WHERE Id = ?";
-        DBConextion con = null;
-
+        String sql = "DELETE FROM OctoberEatsDB.Usersv2 WHERE Id = ?";
         try {
-            con = new DBConextion();
-            Connection connection = con.StablishConection();
+            DBConextion db = new DBConextion();
+            Connection connection = db.StablishConection();
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-
-                model.removeRow(selectedRow);
-                JOptionPane.showMessageDialog(null, "Fila eliminada exitosamente.");
+                JOptionPane.showMessageDialog(null, "User deleted successfully.");
+                refreshTable();
             } else {
-                JOptionPane.showMessageDialog(null, "No se pudo eliminar la fila.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Deletion failed.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error al eliminar la fila de la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            if (con != null) {
-                con.close();
-            }
+            JOptionPane.showMessageDialog(null, "Error deleting user: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
