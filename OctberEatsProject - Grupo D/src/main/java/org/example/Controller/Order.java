@@ -23,7 +23,6 @@ public class Order extends JFrame {
     private JButton addNewItemsButton;
     private JButton trackOrderButton;
     private JButton Createbutton;
-    private JButton updateOrderButton;
     private JPanel MainPanel;
     private JTable DataJTable;
     private JPanel sideMenu;
