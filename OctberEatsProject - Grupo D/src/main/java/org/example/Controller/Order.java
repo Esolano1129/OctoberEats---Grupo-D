@@ -65,8 +65,6 @@ public class Order extends JFrame {
 
         deleteOrderButton.addActionListener(e -> deleteOrder());
 
-        updateOrderButton.addActionListener(e -> editOrder());
-
         addNewItemsButton.addActionListener(e -> addNewItems());
 
         trackOrderButton.addActionListener(e -> trackOrder());
