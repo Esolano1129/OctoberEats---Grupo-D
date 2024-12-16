@@ -4,13 +4,14 @@ import org.example.Utilities.DBConextion;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Order extends JFrame {
-    private JTextField IdTxt;
     private JTextField TxtOrderNumber;
     private JTextField TxtDate;
     private JTextField TxtTime;
@@ -34,9 +35,11 @@ public class Order extends JFrame {
     private JButton restaurantsMenu;
     private JButton productosMenu;
     private JButton usersMenu;
+    private JButton RefreshListButton;
     private JPanel centralPanel;
     private JLabel restTitle;
-    private JButton RefreshListButton;
+    private JTextField IdTxt;
+    private JButton clearButton;
 
     public Order() {
         setContentPane(orderPanel);
@@ -69,6 +72,19 @@ public class Order extends JFrame {
         trackOrderButton.addActionListener(e -> trackOrder());
         
         RefreshListButton.addActionListener(e -> refreshTable());
+
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                TxtOrderNumber.setText("");
+                TxtDate.setText("");
+                TxtTime.setText("");
+                TxtDeliveryTime.setText("");
+                TxtUser.setText("");
+                TxtProductItem.setText("");
+            }
+        });
+
     }
 
     private void navigateTo(JFrame frame) {
