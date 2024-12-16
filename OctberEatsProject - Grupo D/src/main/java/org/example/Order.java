@@ -36,6 +36,7 @@ public class Order extends JFrame {
     private JButton usersMenu;
     private JPanel centralPanel;
     private JLabel restTitle;
+    private JButton RefreshListButton;
 
     public Order() {
         setContentPane(orderPanel);
