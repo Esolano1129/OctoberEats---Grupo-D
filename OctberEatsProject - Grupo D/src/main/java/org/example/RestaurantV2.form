@@ -787,7 +787,7 @@
                       <font name=".AppleSystemUIFont" size="14" style="1"/>
                       <foreground color="-1"/>
                       <opaque value="true"/>
-                      <text value="Limpiar tabla"/>
+                      <text value="Limpiar campos"/>
                     </properties>
                   </component>
                   <component id="7a3a0" class="javax.swing.JButton" binding="borrarButton">
