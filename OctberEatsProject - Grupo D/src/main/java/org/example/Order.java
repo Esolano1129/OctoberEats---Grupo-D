@@ -4,7 +4,10 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Order extends JFrame {
     private JTextField IdTxt;
@@ -33,7 +36,6 @@ public class Order extends JFrame {
     private JButton usersMenu;
     private JPanel centralPanel;
     private JLabel restTitle;
-    private JButton RefreshListButton;
 
     public Order() {
         setContentPane(orderPanel);
@@ -41,103 +43,34 @@ public class Order extends JFrame {
         setLocationRelativeTo(null);
         setSize(1920, 1080);
 
-        regresarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Menu menu = new Menu();
-                menu.setVisible(true);
-                dispose();
-            }
-        });
+        regresarButton.addActionListener(e -> navigateTo(new Menu()));
 
-        inicioMenu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Menu menu = new Menu();
-                menu.setVisible(true);
-                dispose();
-            }
-        });
+        inicioMenu.addActionListener(e -> navigateTo(new Menu()));
 
-        restaurantsMenu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                RestaurantV2 restaurantV2 = new RestaurantV2();
-                restaurantV2.setVisible(true);
-                dispose();
-            }
-        });
+        restaurantsMenu.addActionListener(e -> navigateTo(new RestaurantV2()));
 
-        productosMenu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ProductItemv2 productItemv2 = new ProductItemv2();
-                productItemv2.setVisible(true);
-                dispose();
-            }
-        });
+        productosMenu.addActionListener(e -> navigateTo(new ProductItemv2()));
 
-        usersMenu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                User user = new User();
-                user.setVisible(true);
-                dispose();
-            }
-        });
+        usersMenu.addActionListener(e -> navigateTo(new User()));
 
-        ordersMenu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Order order = new Order();
-                order.setVisible(true);
-                dispose();
-            }
-        });
+        ordersMenu.addActionListener(e -> navigateTo(new Order()));
 
+        Createbutton.addActionListener(e -> createOrder());
 
-        Createbutton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                createOrder();
-            }
-        });
+        editOrderButton.addActionListener(e -> editOrder());
 
-        editOrderButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                editOrder();
-            }
-        });
+        deleteOrderButton.addActionListener(e -> deleteOrder());
 
-        deleteOrderButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                deleteOrder();
-            }
-        });
+        updateOrderButton.addActionListener(e -> editOrder());
 
-        updateOrderButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                updateOrder();
-            }
-        });
+        addNewItemsButton.addActionListener(e -> addNewItems());
 
-       addNewItemsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                addNewItems();
-            }
-        });
+        trackOrderButton.addActionListener(e -> trackOrder());
+    }
 
-        trackOrderButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                trackOrder();
-            }
-        });
-
+    private void navigateTo(JFrame frame) {
+        frame.setVisible(true);
+        dispose();
     }
 
     public void createOrder() {
@@ -155,6 +88,7 @@ public class Order extends JFrame {
 
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Order Created Successfully!");
+            refreshTable();
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "ERROR: " + e.toString());
@@ -162,77 +96,75 @@ public class Order extends JFrame {
     }
 
     public void editOrder() {
-
         int selectedRow = DataJTable.getSelectedRow();
 
         if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(null, "Por favor, seleccione una fila para actualizar.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a row to update.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         DefaultTableModel model = (DefaultTableModel) DataJTable.getModel();
         int id = (int) model.getValueAt(selectedRow, 0);
-        String OrderNumber = TxtOrderNumber.getText();
-        String Date = TxtDate.getText();
-        String Time =  TxtTime.getText();
-        String DeliveryTime =  TxtDeliveryTime.getText();
-        String User =  TxtUser.getText();
-        String ProductItem = TxtProductItem.getText();
-        int age = Integer.parseInt(IdTxt.getText());
 
-
-        String sql = "UPDATE OctoberEatsDB.Usersv2 SET UserName = ?, Password = ?, Firstname = ?, LastName = ?, Phone = ?, email = ?, Address = ?, Age = ? WHERE ID = ?";
-        DBConextion con = null;
-
+        String sql = "UPDATE OctoberEatsDB.Orders SET OrderNumber = ?, Date = ?, Time = ?, DeliveryTime = ?, User = ?, ProductItem = ? WHERE Id = ?";
         try {
-            con = new DBConextion();
-            Connection connection = con.StablishConection();
+            DBConextion db = new DBConextion();
+            Connection connection = db.StablishConection();
             PreparedStatement stmt = connection.prepareStatement(sql);
+
             stmt.setString(1, TxtOrderNumber.getText());
             stmt.setString(2, TxtDate.getText());
             stmt.setString(3, TxtTime.getText());
             stmt.setString(4, TxtDeliveryTime.getText());
             stmt.setString(5, TxtUser.getText());
             stmt.setString(6, TxtProductItem.getText());
-            stmt.setInt(7, Integer.parseInt(IdTxt.getText()));
+            stmt.setInt(7, id);
+
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-                model.setValueAt(OrderNumber, selectedRow, 1);
-                model.setValueAt(Date, selectedRow, 2);
-                model.setValueAt(Time, selectedRow, 3);
-                model.setValueAt(DeliveryTime, selectedRow, 4);
-                model.setValueAt(User, selectedRow, 5);
-                model.setValueAt(ProductItem, selectedRow, 6);
-
-                JOptionPane.showMessageDialog(null, "Fila actualizada correctamente");
+                JOptionPane.showMessageDialog(null, "Order updated successfully.");
+                refreshTable();
             } else {
-                JOptionPane.showMessageDialog(null, "No se pudo actualizar la fila.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Update failed.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error al actualizar la fila en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            if (con != null) {
-                con.close();
-            }
+            JOptionPane.showMessageDialog(null, "Error updating order: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-
     }
 
     public void deleteOrder() {
+        int selectedRow = DataJTable.getSelectedRow();
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(null, "Please select a row to delete.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        DefaultTableModel model = (DefaultTableModel) DataJTable.getModel();
+        int id = (int) model.getValueAt(selectedRow, 0);
+
+        int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this order?", "Confirm Deletion", JOptionPane.YES_NO_OPTION);
+        if (confirm != JOptionPane.YES_OPTION) {
+            return;
+        }
+
+        String sql = "DELETE FROM OctoberEatsDB.Orders WHERE Id = ?";
         try {
-            DBConextion connection = new DBConextion();
-            String query = "DELETE FROM OctoberEatsDB.Orders WHERE Id = ?";
-            PreparedStatement ps = connection.StablishConection().prepareStatement(query);
+            DBConextion db = new DBConextion();
+            Connection connection = db.StablishConection();
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, id);
+            int rowsAffected = stmt.executeUpdate();
 
-            ps.setInt(1, Integer.parseInt(IdTxt.getText()));
-            ps.executeUpdate();
-
-            JOptionPane.showMessageDialog(null, "Order Deleted Successfully!");
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "ERROR: " + e.toString());
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(null, "Order deleted successfully.");
+                refreshTable();
+            } else {
+                JOptionPane.showMessageDialog(null, "Deletion failed.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error deleting order: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -269,7 +201,31 @@ public class Order extends JFrame {
         }
     }
 
-    public void updateOrder() {
-        editOrder();
+    private void refreshTable() {
+        String sql = "SELECT * FROM OctoberEatsDB.Orders;";
+
+        try {
+            DBConextion db = new DBConextion();
+            ResultSet resultSet = db.getResult(sql);
+
+            DefaultTableModel model = new DefaultTableModel();
+            model.setColumnIdentifiers(new Object[]{"Id", "OrderNumber", "Date", "Time", "DeliveryTime", "User", "ProductItem"});
+
+            while (resultSet.next()) {
+                model.addRow(new Object[]{
+                        resultSet.getInt("Id"),
+                        resultSet.getString("OrderNumber"),
+                        resultSet.getString("Date"),
+                        resultSet.getString("Time"),
+                        resultSet.getString("DeliveryTime"),
+                        resultSet.getString("User"),
+                        resultSet.getString("ProductItem")
+                });
+            }
+
+            DataJTable.setModel(model);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error loading order data: " + e.getMessage());
+        }
     }
 }
