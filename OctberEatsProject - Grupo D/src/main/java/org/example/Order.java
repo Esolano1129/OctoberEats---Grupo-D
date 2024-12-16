@@ -67,8 +67,8 @@ public class Order extends JFrame {
         addNewItemsButton.addActionListener(e -> addNewItems());
 
         trackOrderButton.addActionListener(e -> trackOrder());
-
-        trackOrderButton.addActionListener(e -> refreshTable());
+        
+        RefreshListButton.addActionListener(e -> refreshTable());
     }
 
     private void navigateTo(JFrame frame) {
